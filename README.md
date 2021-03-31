@@ -2,7 +2,6 @@
 
 - [Overview](#overview)
 - [MVP](#mvp)
-  - [Goals](#goals)
   - [Libraries and Dependencies](#libraries-and-dependencies)
   - [Client (Front End)](#client-front-end)
     - [Wireframes](#wireframes)
@@ -34,9 +33,9 @@ _The **Travel Like a Local** MVP_
 - _Homepage_
 - _Login for full CRUD_
 - _User authentication and association_
-- _One_to_many user > comments && posts_
-- _Many_to_many favorites > posts_
-- _One_to_many posts > comments && favorites_
+- _One_to_many user << comments && posts_
+- _Many_to_many favorites <<>> posts_
+- _One_to_many post << comments && favorites_
 - _Search_
 - _Nav will change if logged in_
 - _Uniform style across each file (frontend and backend)_
@@ -45,8 +44,6 @@ _The **Travel Like a Local** MVP_
 <br>
 
 ### Libraries and Dependencies
-
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
@@ -62,8 +59,6 @@ _The **Travel Like a Local** MVP_
 ### Client (Front End)
 
 #### Wireframes
-
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
 [Desktop Landing](https://xd.adobe.com/view/4654ec26-ab18-4dd1-5f43-0a173a83154f-3065/)
 
@@ -107,13 +102,9 @@ _The **Travel Like a Local** MVP_
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
-
 [Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
 
 #### Component Architecture
-
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
 
 ``` structure
 
@@ -173,7 +164,6 @@ src
 
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
@@ -235,8 +225,8 @@ src
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+> TBD Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+> TBD Use this section to list of all major issues encountered and their resolution.
