@@ -1,4 +1,4 @@
-# ![img](https://i.imgur.com/38unM46.png?1)
+# ![img](https://i.imgur.com/sQOLd7w.png)
 
 - [Overview](#overview)
 - [MVP](#mvp)
