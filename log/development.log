@@ -143,3 +143,573 @@ FOREIGN KEY ("post_id")
   [1m[36mComment Create (3.1ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "this is rad"], ["user_id", 9], ["post_id", 1], ["created_at", "2021-03-31 18:00:03.726883"], ["updated_at", "2021-03-31 18:00:03.726883"]]
   [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+Started GET "/users" for ::1 at 2021-03-31 14:53:12 -0500
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 206ms (Views: 17.5ms | ActiveRecord: 115.9ms | Allocations: 7862)
+
+
+Started GET "/users/posts" for ::1 at 2021-03-31 14:54:00 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController
+Did you mean?  authorize_request
+               encode
+               decode
+               user_params):
+  
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started POST "/users/1" for ::1 at 2021-03-31 14:56:09 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/" for ::1 at 2021-03-31 14:56:16 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 143)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  user
+               controller
+               action):
+  
+app/controllers/users_controller.rb:24:in `user_params'
+app/controllers/users_controller.rb:8:in `create'
+Started GET "/users/" for ::1 at 2021-03-31 14:56:20 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 1.1ms | Allocations: 1124)
+
+
+Started POST "/users/6" for ::1 at 2021-03-31 14:56:29 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/6"):
+  
+Started GET "/users/6" for ::1 at 2021-03-31 15:01:34 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController
+Did you mean?  authorize_request
+               encode
+               decode
+               user_params):
+  
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/users/6" for ::1 at 2021-03-31 15:02:07 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController
+Did you mean?  authorize_request
+               encode
+               decode
+               user_params):
+  
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/user/6" for ::1 at 2021-03-31 15:06:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user/6"):
+  
+Started GET "/user/" for ::1 at 2021-03-31 15:06:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for ::1 at 2021-03-31 15:06:21 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+Completed 404 Not Found in 23ms (ActiveRecord: 36.3ms | Allocations: 452)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/users" for ::1 at 2021-03-31 15:10:28 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+Completed 404 Not Found in 67ms (ActiveRecord: 36.6ms | Allocations: 3109)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for ::1 at 2021-03-31 15:13:43 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+Completed 404 Not Found in 75ms (ActiveRecord: 30.3ms | Allocations: 197)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for ::1 at 2021-03-31 15:14:03 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 54ms (Views: 36.4ms | ActiveRecord: 52.2ms | Allocations: 3762)
+
+
+Started GET "/users/6" for ::1 at 2021-03-31 15:14:13 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"6", "user"=>{}}
+  [1m[36mUser Load (41.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 200 OK in 97ms (Views: 0.9ms | ActiveRecord: 42.2ms | Allocations: 744)
+
+
+Started GET "/posts" for ::1 at 2021-03-31 15:15:15 -0500
+Processing by PostsController#index as */*
+  Parameters: {"post"=>{}}
+  [1m[36mPost Load (22.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 212ms (Views: 103.2ms | ActiveRecord: 109.9ms | Allocations: 4386)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-31 15:17:02 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1", "post"=>{}}
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 45ms (Views: 1.1ms | ActiveRecord: 28.7ms | Allocations: 3741)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-31 15:17:18 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1", "post"=>{}}
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+  [1m[36mComment Load (9.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+Completed 200 OK in 345ms (Views: 228.5ms | ActiveRecord: 102.1ms | Allocations: 11402)
+
+
+Started POST "/posts/1" for ::1 at 2021-03-31 15:27:16 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/posts/1"):
+  
+Started POST "/posts" for ::1 at 2021-03-31 15:27:25 -0500
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>6, "post"=>{"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>6}}
+[31mUnpermitted parameter: :user_id[0m
+Completed 422 Unprocessable Entity in 242ms (Views: 160.9ms | ActiveRecord: 177.0ms | Allocations: 7419)
+
+
+Started POST "/posts" for ::1 at 2021-03-31 15:27:46 -0500
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "post"=>{"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2}}
+[31mUnpermitted parameter: :user_id[0m
+Completed 422 Unprocessable Entity in 61ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 627)
+
+
+Started POST "/posts" for ::1 at 2021-03-31 15:29:14 -0500
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "post"=>{"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2}}
+[31mUnpermitted parameter: :user_id[0m
+Completed 422 Unprocessable Entity in 243ms (Views: 2.3ms | ActiveRecord: 144.3ms | Allocations: 4746)
+
+
+Started GET "/users" for ::1 at 2021-03-31 15:29:59 -0500
+Processing by UsersController#index as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "user"=>{}}
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 86ms (Views: 47.0ms | ActiveRecord: 42.8ms | Allocations: 3455)
+
+
+Started GET "/posts" for ::1 at 2021-03-31 15:30:34 -0500
+Processing by PostsController#index as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "post"=>{"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2}}
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 84ms (Views: 61.9ms | ActiveRecord: 59.2ms | Allocations: 4210)
+
+
+Started GET "/users" for ::1 at 2021-03-31 15:30:49 -0500
+Processing by UsersController#index as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "user"=>{}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 1.3ms | Allocations: 1103)
+
+
+Started GET "/posts" for ::1 at 2021-03-31 15:30:59 -0500
+Processing by PostsController#index as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "post"=>{"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2}}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.9ms | Allocations: 1553)
+
+
+Started GET "/posts" for ::1 at 2021-03-31 15:31:43 -0500
+Processing by PostsController#index as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "post"=>{"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2}}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.5ms | Allocations: 1553)
+
+
+Started POST "/posts" for ::1 at 2021-03-31 15:31:52 -0500
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "post"=>{"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2}}
+[31mUnpermitted parameter: :user_id[0m
+Completed 422 Unprocessable Entity in 41ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 762)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-31 16:11:36 -0500
+Processing by PostsController#show as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "id"=>"1", "post"=>{"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2}}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 28.8ms | Allocations: 642)
+
+
+  
+NoMethodError (undefined method `posts' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:45:in `set_post'
+Started POST "/posts/1" for ::1 at 2021-03-31 16:13:58 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/posts/1"):
+  
+Started POST "/posts/1" for ::1 at 2021-03-31 16:14:11 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/posts/1"):
+  
+Started POST "/posts/" for ::1 at 2021-03-31 16:14:15 -0500
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "post"=>{"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2}}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.7ms | ActiveRecord: 103.6ms | Allocations: 215)
+
+
+Started POST "/posts/" for ::1 at 2021-03-31 16:14:36 -0500
+  
+SyntaxError (/Users/allisonreynolds/Desktop/General_Assmebly/Sapphire/unit_4/project_4/Travel-Like-A-Local/app/controllers/posts_controller.rb:3: syntax error, unexpected local variable or method, expecting `end'
+..._action :authorize_request only: [:create]
+...                           ^~~~
+):
+  
+app/controllers/posts_controller.rb:3: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/posts_controller.rb:3: syntax error, unexpected local variable or method, expecting `end'
+Started POST "/posts/" for ::1 at 2021-03-31 16:14:48 -0500
+  
+SyntaxError (/Users/allisonreynolds/Desktop/General_Assmebly/Sapphire/unit_4/project_4/Travel-Like-A-Local/app/controllers/posts_controller.rb:3: syntax error, unexpected local variable or method, expecting `end'
+..._action :authorize_request only: :create
+...                           ^~~~
+):
+  
+app/controllers/posts_controller.rb:3: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/posts_controller.rb:3: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/users" for ::1 at 2021-03-31 16:15:35 -0500
+Processing by UsersController#index as */*
+  Parameters: {"title"=>"Go here", "destination"=>"Colorado", "content"=>"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "user_id"=>2, "user"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 47ms (Views: 33.6ms | ActiveRecord: 22.5ms | Allocations: 3450)
+
+
+Started GET "/auth/login" for ::1 at 2021-03-31 16:15:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-03-31 16:15:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-03-31 16:17:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-03-31 16:17:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-03-31 16:18:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started POST "/auth/login" for ::1 at 2021-03-31 16:18:39 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/auth/login"):
+  
+Started PUT "/auth/login" for ::1 at 2021-03-31 16:18:45 -0500
+  
+ActionController::RoutingError (No route matches [PUT] "/auth/login"):
+  
+Started POST "/auth/login" for ::1 at 2021-03-31 16:18:49 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-03-31 16:19:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-03-31 16:20:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started POST "/auth/login" for ::1 at 2021-03-31 16:26:28 -0500
+Processing by AuthenticationController#login as */*
+  Parameters: {"authentication"=>{"email"=>"allison@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (78.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 438ms (ActiveRecord: 217.0ms | Allocations: 5365)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2021-03-31 16:27:06 -0500
+Processing by AuthenticationController#login as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 1435ms (Views: 2.0ms | ActiveRecord: 23.2ms | Allocations: 3093)
+
+
+Started POST "/users/6/posts" for ::1 at 2021-03-31 16:27:38 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/6/posts"):
+  
+Started GET "/users/6/posts" for ::1 at 2021-03-31 16:27:47 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/6/posts"):
+  
+Started GET "/users/" for ::1 at 2021-03-31 16:27:56 -0500
+Processing by UsersController#index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.8ms | Allocations: 1116)
+
+
+Started GET "/users/6" for ::1 at 2021-03-31 16:28:05 -0500
+Processing by UsersController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"6", "user"=>{}}
+  [1m[36mUser Load (14.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 200 OK in 25ms (Views: 0.8ms | ActiveRecord: 14.1ms | Allocations: 688)
+
+
+Started GET "/posts" for ::1 at 2021-03-31 16:28:18 -0500
+  
+SyntaxError (/Users/allisonreynolds/Desktop/General_Assmebly/Sapphire/unit_4/project_4/Travel-Like-A-Local/app/controllers/posts_controller.rb:3: syntax error, unexpected local variable or method, expecting `end'
+..._action :authorize_request only: :create
+...                           ^~~~
+):
+  
+app/controllers/posts_controller.rb:3: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/posts_controller.rb:3: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/posts" for ::1 at 2021-03-31 16:28:46 -0500
+Processing by PostsController#index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "post"=>{}}
+  [1m[36mPost Load (12.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 365ms (Views: 208.9ms | ActiveRecord: 168.1ms | Allocations: 4251)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-31 16:30:28 -0500
+Processing by PostsController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"1", "post"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 620)
+
+
+  
+NoMethodError (undefined method `posts' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:47:in `set_post'
+Started GET "/posts/" for ::1 at 2021-03-31 16:30:37 -0500
+Processing by PostsController#index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "post"=>{}}
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 75ms (Views: 72.9ms | ActiveRecord: 1.4ms | Allocations: 1556)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-31 16:32:29 -0500
+Processing by PostsController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"1", "post"=>{}}
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 5.8ms | Allocations: 1760)
+
+
+  
+NameError (uninitialized constant PostsController::Posts):
+  
+app/controllers/posts_controller.rb:47:in `set_post'
+Started GET "/posts/1" for ::1 at 2021-03-31 16:32:50 -0500
+Processing by PostsController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"1", "post"=>{}}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `set_post'
+  [1m[36mComment Load (2.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `show'
+Completed 200 OK in 243ms (Views: 92.6ms | ActiveRecord: 131.7ms | Allocations: 7488)
+
+
+Started GET "/posts/1/comments" for ::1 at 2021-03-31 16:35:14 -0500
+Processing by CommentsController#index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "post_id"=>"1", "comment"=>{}}
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `index'
+  [1m[36mPost Load (14.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `index'
+Completed 200 OK in 133ms (Views: 22.6ms | ActiveRecord: 53.8ms | Allocations: 8402)
+
+
+Started GET "/post" for ::1 at 2021-03-31 17:00:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/post"):
+  
+Started GET "/posts" for ::1 at 2021-03-31 17:00:20 -0500
+Processing by PostsController#index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "post"=>{}}
+  [1m[36mPost Load (44.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 111ms (Views: 61.9ms | ActiveRecord: 83.6ms | Allocations: 4261)
+
+
+Started GET "/posts/6" for ::1 at 2021-03-31 17:01:11 -0500
+Processing by PostsController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"6", "post"=>{}}
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46:in `set_post'
+  [1m[36mComment Load (162.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+Completed 200 OK in 454ms (Views: 234.4ms | ActiveRecord: 188.1ms | Allocations: 3299)
+
+
