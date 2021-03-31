@@ -1,5 +1,4 @@
-# ![img](https://i.imgur.com/JSkNgG8.png)
-# Travel-Like-A-Local
+# ![img](https://i.imgur.com/38unM46.png)
 
 - [Overview](#overview)
 - [MVP](#mvp)
