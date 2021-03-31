@@ -50,11 +50,12 @@ _The **Travel Like a Local** MVP_
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | _Build encapsulated components that manage their own state_ |
+|   React Router   | _Keeps the UI in sync with the URL_ |
+|   React Router Dom  | _It contains the DOM bindings for React Router_ |
+| JWT | _JSON Web Token_ |
+|     Bcrypt      | _A password-hashing function_ |
+|  Axios  | _A promise-based HTTP client for the browser and Node_ |
 
 <br>
 
