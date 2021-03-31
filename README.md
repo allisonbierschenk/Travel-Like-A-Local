@@ -18,8 +18,9 @@
 
 ## Overview
 
-_**Travel Like a Local** 
-Everyone knows about the well known tourist attractions, and sure those can be spectacular, but I know my best trips are the ones with no plans and accompanied by a local. This app is designed to write, share, and discover hidden gems through blogs written by travelors and locals from all over the world.
+_**Travel Like a Local**_
+Everyone knows about the well known tourist attractions, and sure those can be spectacular, but I know my best trips are the ones with no plans and accompanied by a local. This app is designed to write, share, and discover hidden gems through blogs and posts written by travelors and locals from all over the world.
+
 <br>
 
 ## MVP
