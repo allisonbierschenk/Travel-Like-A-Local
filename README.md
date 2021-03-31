@@ -217,6 +217,7 @@ src
 #### ERD Model
 
 [ERD](https://drive.google.com/file/d/1SrRzOX8ioYJS0EQMMDwIAGIxiRLKw3pd/view?usp=sharing)
+![img](https://i.imgur.com/kN4vX53.png)
 <br>
 
 ***
