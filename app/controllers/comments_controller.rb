@@ -3,13 +3,14 @@ class CommentsController < ApplicationController
 
   # GET /comments
   def index
-    @comments = Comment.all
-
-    render json: @comments
+    @post = Post.find(params[:post_id])
+    @comments = Comment.where(post_id: @post.id)
+    render json: @comments, include: :post, status: :ok
   end
 
   # GET /comments/1
   def show
+    @comments = Comment.find(params[:id])
     render json: @comment
   end
 
@@ -18,13 +19,14 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      render json: @comment, status: :created, location: @comment
+      render json: @comment, status: :created
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
+    render json: @comment
   end
 
-  # PATCH/PUT /comments/1
+  # PUT /comments/1
   def update
     if @comment.update(comment_params)
       render json: @comment
