@@ -60,6 +60,7 @@ _The **Travel Like a Local** MVP_
 ### Client (Front End)
 
 #### Wireframes
+[All](https://xd.adobe.com/view/4654ec26-ab18-4dd1-5f43-0a173a83154f-3065/)
 
 [Desktop Landing]
 
