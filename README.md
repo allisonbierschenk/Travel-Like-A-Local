@@ -104,7 +104,7 @@ _The **Travel Like a Local** MVP_
 
 #### Component Tree
 
-[Component Tree Sample](https://i.imgur.com/5XS6Kn9.png)
+![Component Tree](https://i.imgur.com/5XS6Kn9.png)
 
 #### Component Architecture
 
