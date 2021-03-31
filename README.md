@@ -61,45 +61,49 @@ _The **Travel Like a Local** MVP_
 
 #### Wireframes
 
-[Desktop Landing](https://xd.adobe.com/view/4654ec26-ab18-4dd1-5f43-0a173a83154f-3065/)
+[Desktop Landing]
 
-![img](https://i.imgur.com/Rq8bKEM.png)
+![img](https://i.imgur.com/Wm7v9Op.png)
 
-[Logged in Nav](https://xd.adobe.com/view/4654ec26-ab18-4dd1-5f43-0a173a83154f-3065/screen/3913156d-dff7-4f33-9ec3-721dc4253fba)
+[Logged in Nav]
 
-![img](https://i.imgur.com/A8sFC7U.png)
+![img](https://i.imgur.com/6v8tbne.png)
 
-[Sign-in](https://xd.adobe.com/view/4654ec26-ab18-4dd1-5f43-0a173a83154f-3065/screen/6df11571-5211-4deb-9738-75c224cdb234)
+[Sign-in]
 
-![img](https://i.imgur.com/ArRmEOX.png)
+![img](https://i.imgur.com/6mpNL8D.png)
 
-[Sign-up](https://xd.adobe.com/view/4654ec26-ab18-4dd1-5f43-0a173a83154f-3065/screen/ca0b9591-47a3-4b1b-be3a-efda9c969db8)
+[Sign-up]
 
-![img](https://i.imgur.com/bBXgkoL.png)
+![img](https://i.imgur.com/Nzz606m.png)
 
 [Post Details]
 
-![img](https://i.imgur.com/ECMw0Bl.png)
+![img](https://i.imgur.com/y3rwnzO.png)
 
 [Post Details (loggedin)]
 
-![img](https://i.imgur.com/xqtwP3f.png)
+![img](https://i.imgur.com/CRTJjMD.png)
 
 [MyAccount]
 
-![img](https://i.imgur.com/HdLM5DA.png)
+![img](https://i.imgur.com/0q4CHgt.png)
 
 [NewPost]
 
-![img](https://i.imgur.com/CpPaLuR.png)
+![img](https://i.imgur.com/Zrg0pp5.png)
+
+[MyFavorites]
+
+![img](https://i.imgur.com/uEpLgaM.png)
 
 [EditPost]
 
-![img](https://i.imgur.com/6PE0ztE.png)
+![img](https://i.imgur.com/WZnUrc6.png)
 
 [Pop-Up(modal)]
 
-![img](https://i.imgur.com/8HPG4EI.png)
+![img](https://i.imgur.com/FvfxAL5.png)
 
 #### Component Tree
 
