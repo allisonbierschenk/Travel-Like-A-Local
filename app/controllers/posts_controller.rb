@@ -13,6 +13,10 @@ class PostsController < ApplicationController
   def show
     render json: @post, include: :comments
   end
+  def user_index
+    @posts = Post.where(user_id: @current_user.id)
+    render json: @post, include: :comments
+  end
 
   # POST /posts
   def create

@@ -52,19 +52,19 @@ function App() {
 
   return (
     <div className="App">
-      <Layout currentUser={currentUser} handleLogout={handleLogout}>
-        <Switch>
-          <Route path="/signin">
-            <SignIn handleLogin={handleLogin} />
-          </Route>
-          <Route path="/signup">
-            <SignUp handleRegister={handleRegister} />
-          </Route>
+      <Switch>
+        <Route path="/signin">
+          <SignIn handleLogin={handleLogin} />
+        </Route>
+        <Route path="/signup">
+          <SignUp handleRegister={handleRegister} />
+        </Route>
+        <Layout currentUser={currentUser} handleLogout={handleLogout}>
           <Route path="/">
             <PostPreview />
           </Route>
-        </Switch>
-      </Layout>
+        </Layout>
+      </Switch>
     </div>
   );
 }
