@@ -713,3 +713,342 @@ Processing by PostsController#show as */*
 Completed 200 OK in 454ms (Views: 234.4ms | ActiveRecord: 188.1ms | Allocations: 3299)
 
 
+Started GET "/users" for ::1 at 2021-04-01 09:09:42 -0500
+Processing by UsersController#index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user"=>{}}
+  [1m[36mUser Load (93.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 468ms (Views: 101.4ms | ActiveRecord: 950.8ms | Allocations: 4079)
+
+
+Started POST "/users" for ::1 at 2021-04-01 09:16:22 -0500
+Processing by UsersController#create as */*
+  Parameters: {"authentication"=>{"username"=>"bigbird", "email"=>"allison@gmail.com", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 400 Bad Request in 42ms (Allocations: 142)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  user
+               authentication
+               controller
+               action):
+  
+app/controllers/users_controller.rb:30:in `user_params'
+app/controllers/users_controller.rb:14:in `create'
+Started POST "/users" for ::1 at 2021-04-01 09:17:55 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"bigbird", "email"=>"allison@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (54.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (6.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (156.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "bigbird"], ["email", "allison@gmail.com"], ["password_digest", "$2a$12$fkg08uGg/OFv/hYQ4KcKoerUWSIY2jgVr7HgHrAi1l1MVK.crDWa6"], ["created_at", "2021-04-01 14:17:58.337967"], ["updated_at", "2021-04-01 14:17:58.337967"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (66.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+Completed 201 Created in 3041ms (Views: 0.5ms | ActiveRecord: 431.6ms | Allocations: 5137)
+
+
+Started GET "/user" for ::1 at 2021-04-01 09:24:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for ::1 at 2021-04-01 09:25:01 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"bigbird", "email"=>"allison@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (16.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 792ms (Views: 9.8ms | ActiveRecord: 70.8ms | Allocations: 3819)
+
+
+Started GET "/users" for ::1 at 2021-04-01 09:25:18 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"bigbird", "email"=>"allison@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 36ms (Views: 3.9ms | ActiveRecord: 9.3ms | Allocations: 1732)
+
+
+Started GET "/users/6" for ::1 at 2021-04-01 09:25:25 -0500
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"bigbird", "email"=>"allison@gmail.com", "password"=>"[FILTERED]"}, "id"=>"6"}
+  [1m[36mUser Load (23.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (32.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 105ms (Views: 1.0ms | ActiveRecord: 56.1ms | Allocations: 1121)
+
+
+Started GET "/auth/login" for ::1 at 2021-04-01 09:26:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-04-01 09:26:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-04-01 09:26:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-04-01 09:26:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-04-01 09:27:00 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-04-01 09:27:06 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Error occurred while parsing request parameters.
+Contents:
+
+{"authentication":{
+   "email": "allison@me.com",
+
+}
+}
+Started GET "/auth/login" for ::1 at 2021-04-01 09:27:10 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started GET "/auth/login" for ::1 at 2021-04-01 09:27:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+Started POST "/auth/login" for ::1 at 2021-04-01 09:27:29 -0500
+Processing by AuthenticationController#login as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 1432ms (Views: 0.9ms | ActiveRecord: 4.0ms | Allocations: 914)
+
+
+Started POST "/posts/" for ::1 at 2021-04-01 09:48:30 -0500
+Processing by PostsController#create as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "post"=>{}}
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 400 Bad Request in 323ms (ActiveRecord: 122.9ms | Allocations: 2761)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post
+Did you mean?  post
+               controller
+               action
+               authentication):
+  
+app/controllers/posts_controller.rb:51:in `post_params'
+app/controllers/posts_controller.rb:19:in `create'
+Started GET "/posts/" for ::1 at 2021-04-01 09:48:38 -0500
+Processing by PostsController#index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "post"=>{}}
+  [1m[36mPost Load (125.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 332ms (Views: 205.7ms | ActiveRecord: 125.9ms | Allocations: 1577)
+
+
+Started GET "/posts/1" for ::1 at 2021-04-01 09:49:59 -0500
+Processing by PostsController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"1", "post"=>{}}
+  [1m[36mPost Load (292.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46:in `set_post'
+  [1m[36mComment Load (219.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+Completed 200 OK in 995ms (Views: 364.1ms | ActiveRecord: 511.5ms | Allocations: 3685)
+
+
+Started GET "/posts" for ::1 at 2021-04-01 09:57:23 -0500
+Processing by PostsController#index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "post"=>{}}
+  [1m[36mPost Load (25.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 117ms (Views: 89.8ms | ActiveRecord: 203.4ms | Allocations: 4274)
+
+
+Started GET "/posts/1" for ::1 at 2021-04-01 09:57:30 -0500
+Processing by PostsController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"1", "post"=>{}}
+  [1m[36mPost Load (4.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46:in `set_post'
+  [1m[36mComment Load (3.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+Completed 200 OK in 291ms (Views: 56.0ms | ActiveRecord: 58.2ms | Allocations: 4586)
+
+
+Started POST "/posts/1/comments" for ::1 at 2021-04-01 09:58:07 -0500
+Processing by CommentsController#create as */*
+  Parameters: {"comment"=>{"content"=>"yolo"}, "post_id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 500 Internal Server Error in 121ms (Views: 39.2ms | ActiveRecord: 1.3ms | Allocations: 5572)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/comments_controller.rb:27:in `create'
+Started POST "/posts/1/comments" for ::1 at 2021-04-01 10:00:57 -0500
+Processing by CommentsController#create as */*
+  Parameters: {"comment"=>{"content"=>"yolo"}, "post_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:26:in `create'
+  [1m[36mComment Create (32.7ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "yolo"], ["user_id", 6], ["post_id", 1], ["created_at", "2021-04-01 15:00:58.058612"], ["updated_at", "2021-04-01 15:00:58.058612"]]
+  ↳ app/controllers/comments_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (51.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:26:in `create'
+Completed 500 Internal Server Error in 369ms (Views: 0.6ms | ActiveRecord: 191.0ms | Allocations: 13739)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/comments_controller.rb:31:in `create'
+Started POST "/posts/1/comment" for ::1 at 2021-04-01 10:01:22 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/posts/1/comment"):
+  
+Started POST "/posts/1/comment" for ::1 at 2021-04-01 10:02:03 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/posts/1/comment"):
+  
+Started POST "/posts/1/comments" for ::1 at 2021-04-01 10:02:09 -0500
+Processing by CommentsController#create as */*
+  Parameters: {"comment"=>{"content"=>"yolo"}, "post_id"=>"1"}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mPost Load (12.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:26:in `create'
+  [1m[36mComment Create (1.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "yolo"], ["user_id", 6], ["post_id", 1], ["created_at", "2021-04-01 15:02:09.755721"], ["updated_at", "2021-04-01 15:02:09.755721"]]
+  ↳ app/controllers/comments_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (43.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:26:in `create'
+Completed 500 Internal Server Error in 2677ms (Views: 0.6ms | ActiveRecord: 361.4ms | Allocations: 13754)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/comments_controller.rb:31:in `create'
+Started POST "/posts/1/comments" for ::1 at 2021-04-01 10:03:45 -0500
+Processing by CommentsController#create as */*
+  Parameters: {"comment"=>{"content"=>"yolo"}, "post_id"=>"1"}
+  [1m[36mUser Load (17.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mPost Load (48.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:26:in `create'
+  [1m[36mComment Create (1.2ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "yolo"], ["user_id", 6], ["post_id", 1], ["created_at", "2021-04-01 15:03:46.583857"], ["updated_at", "2021-04-01 15:03:46.583857"]]
+  ↳ app/controllers/comments_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (19.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:26:in `create'
+Completed 201 Created in 814ms (Views: 5.3ms | ActiveRecord: 354.4ms | Allocations: 13629)
+
+
+Started POST "/posts/1" for ::1 at 2021-04-01 10:04:23 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/posts/1"):
+  
+Started GET "/posts/1" for ::1 at 2021-04-01 10:04:28 -0500
+Processing by PostsController#show as */*
+  Parameters: {"comment"=>{"content"=>"yolo"}, "id"=>"1", "post"=>{}}
+  [1m[36mPost Load (3.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46:in `set_post'
+  [1m[36mComment Load (40.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+Completed 200 OK in 67ms (Views: 7.3ms | ActiveRecord: 44.5ms | Allocations: 1923)
+
+
+Started GET "/users" for ::1 at 2021-04-01 10:07:36 -0500
+Processing by UsersController#index as */*
+  Parameters: {"comment"=>{"content"=>"yolo"}, "user"=>{}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 10.9ms | ActiveRecord: 4.5ms | Allocations: 1765)
+
+
+Started GET "/users" for ::1 at 2021-04-01 10:09:38 -0500
+Processing by UsersController#index as */*
+  Parameters: {"comment"=>{"content"=>"yolo"}, "user"=>{}}
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 66ms (Views: 5.6ms | ActiveRecord: 20.3ms | Allocations: 4139)
+
+
+Started GET "/users/6" for ::1 at 2021-04-01 10:09:45 -0500
+Processing by UsersController#show as */*
+  Parameters: {"comment"=>{"content"=>"yolo"}, "id"=>"6", "user"=>{}}
+  [1m[36mUser Load (61.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mPost Load (13.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+Completed 200 OK in 278ms (Views: 114.4ms | ActiveRecord: 145.2ms | Allocations: 6114)
+
+
+Started GET "/" for ::1 at 2021-04-01 11:10:19 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/allisonreynolds/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/allisonreynolds/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 106.8ms | Allocations: 406)
+Completed 200 OK in 516ms (Views: 244.0ms | Allocations: 2294)
+
+
+Started POST "/auth/login" for ::1 at 2021-04-01 11:40:13 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"allisonb", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :username[0m
+  [1m[36mUser Load (37.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+[31mUnpermitted parameter: :username[0m
+Completed 500 Internal Server Error in 475ms (ActiveRecord: 183.9ms | Allocations: 3459)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2021-04-01 11:40:15 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"allisonb", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :username[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+[31mUnpermitted parameter: :username[0m
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 41.7ms | Allocations: 7284)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started GET "/static/js/vendors~main.chunk.js" for ::1 at 2021-04-01 11:40:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/vendors~main.chunk.js"):
+  
+Started GET "/static/js/vendors~main.chunk.js" for ::1 at 2021-04-01 11:40:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/vendors~main.chunk.js"):
+  
