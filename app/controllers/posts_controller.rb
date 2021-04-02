@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authorize_request, only: [:create, :update, :destroy]
   before_action :set_post, only: [:show, :update, :destroy]
-  before_action :authorize_request, only: :create
 
 
   # GET /posts
@@ -12,6 +12,10 @@ class PostsController < ApplicationController
   # GET /posts/1
   def show
     render json: @post, include: :comments
+  end
+  def user_index
+    @posts = Post.where(user_id: @current_user.id)
+    render json: @posts, include: :comments
   end
 
   # POST /posts
