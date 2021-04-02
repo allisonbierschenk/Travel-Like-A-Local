@@ -1,66 +1,32 @@
-// import { useState, useEffect } from "react";
-// import { Switch, Route, useHistory } from "react-router-dom";
-// import PostCreate from "../screens/FoodCreate";
-// import PostDetails from "../screens/FoodDetails";
-// import PostEdit from "../screens/FoodEdit";
-// import Foods from "../screens/Foods";
-// import { destroyFood, getAllFoods, postFood, putFood } from "../services/foods";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import PostPreview from "../../components/PostPreview";
 
-// export default function MainContainer(props) {
-//   const [foods, setFoods] = useState([]);
-//   const history = useHistory();
-//   const { currentUser } = props;
+export default function MyAccount(props) {
+  const { allPosts, currentUser } = props;
+  const [post, setPost] = useState(null);
+  const { id } = useParams();
 
-//   useEffect(() => {
-//     const fetchFoods = async () => {
-//       const foodData = await getAllFoods();
-//       setFoods(foodData);
-//     };
-//     fetchFoods();
-//   }, []);
+  console.log(allPosts);
 
-//   const handleCreate = async (foodData) => {
-//     const newFood = await postFood(foodData);
-//     setFoods((prevState) => [...prevState, newFood]);
-//     history.push("/foods");
-//   };
+  useEffect(() => {
+    if (allPosts.length) {
+      const onePost = allPosts.find((post) => post.id === Number(id));
+      setPost(onePost);
+    }
+  }, [allPosts, id]);
 
-//   const handleUpdate = async (id, foodData) => {
-//     const updatedFood = await putFood(id, foodData);
-//     setFoods((prevState) =>
-//       prevState.map((food) => {
-//         return food.id === Number(id) ? updatedFood : food;
-//       })
-//     );
-//     history.push("/foods");
-//   };
-
-//   const handleDelete = async (id) => {
-//     await destroyFood(id);
-//     setFoods((prevState) => prevState.filter((food) => food.id !== id));
-//   };
-
-//   return (
-//     <Switch>
-//       <Route path="/flavors">
-//         <Flavors flavors={flavors} />
-//       </Route>
-//       <Route path="/foods/new">
-//         <FoodCreate handleCreate={handleCreate} />
-//       </Route>
-//       <Route path="/foods/:id/edit">
-//         <FoodEdit foods={foods} handleUpdate={handleUpdate} />
-//       </Route>
-//       <Route path="/foods/:id">
-//         <FoodDetails flavors={flavors} />
-//       </Route>
-//       <Route path="/foods">
-//         <Foods
-//           foods={foods}
-//           handleDelete={handleDelete}
-//           currentUser={currentUser}
-//         />
-//       </Route>
-//     </Switch>
-//   );
-// }
+  return (
+    <div>
+      {currentUser?.id === post.user_id && (
+        <>
+          (
+          <Link to={`/posts/${post.id}`}>
+            <PostPreview title={post.title} destination={post.destination} />
+          </Link>
+          )
+        </>
+      )}
+    </div>
+  );
+}

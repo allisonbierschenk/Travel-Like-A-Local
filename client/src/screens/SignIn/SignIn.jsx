@@ -72,9 +72,15 @@ export default function SignIn(props) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          SignIn
         </Typography>
-        <form className={classes.form} noValidate>
+        <form
+          className={classes.form}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleLogin(formData);
+          }}
+        >
           <TextField
             value={email}
             onChange={handleChange}
@@ -111,10 +117,6 @@ export default function SignIn(props) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleLogin(formData);
-            }}
           >
             Sign In
           </Button>

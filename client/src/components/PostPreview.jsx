@@ -8,7 +8,7 @@ export default function PostPreview(props) {
       <div className="post-preview">
         <h3>{title}</h3>
         <h3>{destination}</h3>
-        <Link to="post/:id">Continue reading...</Link>
+        <button>Continue reading...</button>
       </div>
     </div>
   );

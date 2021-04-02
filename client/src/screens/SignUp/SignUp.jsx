@@ -73,21 +73,27 @@ export default function SignUp(props) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          SignUp
         </Typography>
-        <form className={classes.form} noValidate>
+        <form
+          className={classes.form}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleRegister(formData);
+          }}
+        >
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                autoComplete="fname"
-                name="userName"
-                variant="outlined"
-                required
-                fullWidth
-                id="userName"
-                label="Username"
                 value={username}
                 onChange={handleChange}
+                variant="outlined"
+                name="username"
+                required
+                fullWidth
+                id="username"
+                label="Username"
+                autoComplete="name"
                 autoFocus
               />
             </Grid>
@@ -118,12 +124,6 @@ export default function SignUp(props) {
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid>
           </Grid>
           <Button
             type="submit"
@@ -131,10 +131,6 @@ export default function SignUp(props) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleRegister(formData);
-            }}
           >
             Sign Up
           </Button>

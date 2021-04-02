@@ -5,6 +5,7 @@ import { Switch, Route, useHistory } from "react-router-dom";
 // import styling
 import "./App.css";
 import PostPreview from "./components/PostPreview";
+import MainContainer from "./containers/maincontainer/MainContainer";
 // import MainContainer from "./containers/MainContainer";
 
 // component imports
@@ -35,13 +36,13 @@ function App() {
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData);
     setCurrentUser(userData);
-    history.push("/");
+    history.push("/myaccount");
   };
 
   const handleRegister = async (formData) => {
     const userData = await registerUser(formData);
     setCurrentUser(userData);
-    history.push("/");
+    history.push("/myaccount");
   };
 
   const handleLogout = () => {
@@ -61,7 +62,7 @@ function App() {
         </Route>
         <Layout currentUser={currentUser} handleLogout={handleLogout}>
           <Route path="/">
-            <PostPreview />
+            <MainContainer currentUser={currentUser} />
           </Route>
         </Layout>
       </Switch>
