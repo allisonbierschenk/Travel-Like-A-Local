@@ -2301,3 +2301,349 @@ Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.6ms | Allocations: 218
 Completed 200 OK in 65ms (Views: 2.4ms | ActiveRecord: 2.2ms | Allocations: 2315)
 
 
+Started POST "/auth/login" for ::1 at 2021-04-02 08:08:53 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 948ms (Views: 8.4ms | ActiveRecord: 271.8ms | Allocations: 2923)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 08:08:55 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 1.3ms | Allocations: 1469)
+
+
+Started GET "/static/js/main.chunk.js" for ::1 at 2021-04-02 08:10:12 -0500
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.chunk.js"):
+  
+Started GET "/favicon.ico" for ::1 at 2021-04-02 08:10:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/manifest.json" for ::1 at 2021-04-02 08:10:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/auth/login" for ::1 at 2021-04-02 08:10:55 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 579ms (Views: 0.7ms | ActiveRecord: 147.2ms | Allocations: 6622)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 08:10:56 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 37ms (Views: 15.0ms | ActiveRecord: 9.0ms | Allocations: 5822)
+
+
+Started GET "/" for ::1 at 2021-04-02 08:12:17 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/allisonreynolds/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/allisonreynolds/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 23.4ms | Allocations: 183)
+Completed 200 OK in 32ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 825)
+
+
+Started GET "/static/js/main.chunk.js" for ::1 at 2021-04-02 08:12:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.chunk.js"):
+  
+Started GET "/manifest.json" for ::1 at 2021-04-02 08:12:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/posts" for ::1 at 2021-04-02 08:13:11 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 2.7ms | Allocations: 1464)
+
+
+Started GET "/auth/verify" for ::1 at 2021-04-02 08:13:11 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 0.7ms | Allocations: 822)
+
+
+Started GET "/auth/verify" for ::1 at 2021-04-02 08:38:45 -0500
+Started GET "/posts" for ::1 at 2021-04-02 08:38:45 -0500
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 623ms (Views: 4.3ms | ActiveRecord: 221.0ms | Allocations: 4932)
+
+
+  [1m[36mPost Load (115.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 592ms (Views: 588.8ms | ActiveRecord: 282.6ms | Allocations: 6201)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 08:44:21 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 83ms (Views: 82.2ms | ActiveRecord: 15.8ms | Allocations: 3530)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 08:52:21 -0500
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-02 08:52:22 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (5.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 656ms (Views: 645.4ms | ActiveRecord: 368.3ms | Allocations: 6179)
+
+
+  [1m[36mUser Load (18.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 671ms (Views: 1.8ms | ActiveRecord: 439.7ms | Allocations: 6242)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 08:52:29 -0500
+Started GET "/auth/verify" for ::1 at 2021-04-02 08:52:29 -0500
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (26.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 38ms (Views: 10.0ms | ActiveRecord: 26.9ms | Allocations: 1781)
+
+
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 101ms (Views: 0.7ms | ActiveRecord: 23.9ms | Allocations: 2331)
+
+
+Started GET "/users/13/posts" for ::1 at 2021-04-02 08:52:54 -0500
+Processing by PostsController#user_index as HTML
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 676)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13/posts" for ::1 at 2021-04-02 08:52:55 -0500
+Processing by PostsController#user_index as HTML
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 666)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13/posts" for ::1 at 2021-04-02 08:53:09 -0500
+Processing by PostsController#user_index as HTML
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 666)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/posts" for ::1 at 2021-04-02 08:54:11 -0500
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-02 08:54:11 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (135.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 414ms (Views: 277.5ms | ActiveRecord: 135.8ms | Allocations: 2537)
+
+
+Completed 200 OK in 409ms (Views: 0.5ms | ActiveRecord: 6.4ms | Allocations: 2096)
+
+
+Started GET "/users/14/posts" for ::1 at 2021-04-02 08:55:28 -0500
+Processing by PostsController#user_index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user_id"=>"14", "post"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 669)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/14/post" for ::1 at 2021-04-02 08:55:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/14/post"):
+  
+Started GET "/users/13/posts" for ::1 at 2021-04-02 08:56:05 -0500
+Processing by PostsController#user_index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user_id"=>"13", "post"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 668)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13/" for ::1 at 2021-04-02 08:56:37 -0500
+Processing by UsersController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"13", "user"=>{}}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 220)
+
+
+Started GET "/users/13" for ::1 at 2021-04-02 08:56:45 -0500
+Processing by UsersController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"13", "user"=>{}}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 194)
+
+
+Started GET "/users/13" for ::1 at 2021-04-02 08:57:39 -0500
+Processing by UsersController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"13", "user"=>{}}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 177)
+
+
+Started GET "/users/13" for ::1 at 2021-04-02 08:57:52 -0500
+Processing by UsersController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"13", "user"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (23.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+Completed 200 OK in 158ms (Views: 116.0ms | ActiveRecord: 28.0ms | Allocations: 4993)
+
+
+Started GET "/users/13/posts" for ::1 at 2021-04-02 08:57:58 -0500
+Processing by PostsController#user_index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user_id"=>"13", "post"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 669)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13/posts" for ::1 at 2021-04-02 08:59:08 -0500
+Processing by PostsController#user_index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user_id"=>"13", "post"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 54.3ms | Allocations: 709)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13/posts" for ::1 at 2021-04-02 08:59:13 -0500
+Processing by PostsController#user_index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user_id"=>"13", "post"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 667)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13/posts" for ::1 at 2021-04-02 08:59:57 -0500
+Processing by PostsController#user_index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user_id"=>"13", "post"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 8.1ms | Allocations: 709)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13/posts" for ::1 at 2021-04-02 09:00:01 -0500
+Processing by PostsController#user_index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user_id"=>"13", "post"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 668)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13/posts" for ::1 at 2021-04-02 09:00:48 -0500
+Processing by PostsController#user_index as HTML
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 665)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/posts" for ::1 at 2021-04-02 09:00:48 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (79.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 245ms (Views: 134.6ms | ActiveRecord: 109.1ms | Allocations: 30009)
+
+
+Started GET "/users/13/posts" for ::1 at 2021-04-02 09:00:54 -0500
+Processing by PostsController#user_index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user_id"=>"13", "post"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 667)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13/posts" for ::1 at 2021-04-02 09:01:58 -0500
+  [1m[35m (35.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#user_index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user_id"=>"13", "post"=>{}}
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 65.0ms | Allocations: 3352)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13" for ::1 at 2021-04-02 09:03:45 -0500
+Processing by UsersController#show as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "id"=>"13", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+Completed 200 OK in 229ms (Views: 112.0ms | ActiveRecord: 17.7ms | Allocations: 9849)
+
+
+Started GET "/users/13/posts" for ::1 at 2021-04-02 09:10:54 -0500
+Processing by PostsController#user_index as */*
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}, "user_id"=>"13", "post"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 223.9ms | Allocations: 713)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/posts" for ::1 at 2021-04-02 09:12:38 -0500
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:12:38 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (6.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 107ms (Views: 99.5ms | ActiveRecord: 6.0ms | Allocations: 7834)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 675ms (Views: 3.0ms | ActiveRecord: 509.3ms | Allocations: 11050)
+
+

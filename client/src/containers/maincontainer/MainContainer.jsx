@@ -63,11 +63,11 @@ export default function MainContainer(props) {
             currentUser={currentUser}
           />
         </Route>
-        <Route path="/">
-          <Posts allPosts={allPosts} />
-        </Route>
         <Route path="/myaccount">
           <MyAccount allPosts={allPosts} currentUser={currentUser} />
+        </Route>
+        <Route path="/">
+          <Posts allPosts={allPosts} />
         </Route>
       </Switch>
     </>

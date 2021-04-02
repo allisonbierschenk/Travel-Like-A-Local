@@ -10,10 +10,10 @@ export default function PostCreate(props) {
   const { createPost } = props;
 
   const handleChange = (e) => {
-    const { title, value } = e.target;
+    const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
-      [title]: value,
+      [name]: value,
     }));
   };
   return (
