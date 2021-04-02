@@ -29,7 +29,11 @@ export default function PostDetail(props) {
           <h3>{post.title}</h3>
           <p>{post.destination}</p>
           <p>{post.content}</p>
-          <p>{comments.content}</p>
+          {comments &&
+            comments.map((comment) => {
+              <p>{comment.content}</p>;
+              console.log(comment.content);
+            })}
           {currentUser?.id === post.user_id && (
             <>
               <Link to={`/posts/${post.id}/edit`}>
