@@ -48,7 +48,7 @@ export default function PostCreate(props) {
             />
           </label>
           <label>
-            content:
+            Content:
             <input
               type="text"
               name="content"

@@ -17,23 +17,11 @@ export default function Posts(props) {
 
   const handleSubmit = (event) => event.preventDefault();
 
-  const allPostJSX = allPosts.map((post, index) => (
-    <PostPreview
-      allPosts={allPosts}
-      title={post.title}
-      destination={post.destination}
-      key={index}
-    />
-  ));
+  const allPostJSX = allPosts.map((post, index) => <PostPreview post={post} />);
   console.log(allPostJSX);
 
   const postJSX = queriedPosts.map((post, index) => (
-    <PostPreview
-      allPosts={allPosts}
-      title={post.title}
-      destination={post.destination}
-      key={index}
-    />
+    <PostPreview post={post} />
   ));
 
   console.log(postJSX);

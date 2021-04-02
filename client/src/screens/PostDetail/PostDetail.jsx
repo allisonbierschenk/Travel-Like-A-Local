@@ -16,10 +16,10 @@ export default function PostDetail(props) {
     setComments(comments);
   };
 
-  const createComment = async (commentData) => {
-    const newComment = await addComment(commentData);
+  const createComment = async (commentData, id) => {
+    const newComment = await addComment(commentData, id);
     setComments((prevState) => [...prevState, newComment]);
-    history.pushState(`/posts/${post.id}`);
+    history.push(`/posts/${post.id}`);
   };
   useEffect(() => {
     if (allPosts.length) {
@@ -46,7 +46,7 @@ export default function PostDetail(props) {
           )}
           <p>Leave a comment below!</p>
           <p>
-            <Comments createComment={createComment} />
+            <Comments createComment={createComment} postId={post.id} />
           </p>
           {comments &&
             comments.map((comment) => {
