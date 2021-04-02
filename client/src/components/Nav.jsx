@@ -25,6 +25,7 @@ export default function Nav(props) {
           </button>
         </div>
       )}
+      <hr />
       {props.children}
     </header>
   );

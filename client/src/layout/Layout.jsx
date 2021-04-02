@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 
 export default function Layout(props) {
@@ -7,6 +8,7 @@ export default function Layout(props) {
     <div>
       <Nav currentUser={currentUser} handleLogout={handleLogout} />
       {props.children}
+      <Footer />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SubNav from "../../components/SubNav";
 
 export default function PostCreate(props) {
   const [formData, setFormData] = useState({
@@ -17,43 +18,47 @@ export default function PostCreate(props) {
     }));
   };
   return (
-    <div className="form-container">
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          createPost(formData);
-        }}
-      >
-        <h3>Create a Post</h3>
-        <label>
-          Title:
-          <input
-            type="text"
-            name="title"
-            value={title}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Destination:
-          <input
-            type="text"
-            name="destination"
-            value={destination}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          content:
-          <input
-            type="text"
-            name="content"
-            value={content}
-            onChange={handleChange}
-          />
-        </label>
-        <button>Submit</button>
-      </form>
+    <div>
+      <SubNav />
+
+      <div className="form-container">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            createPost(formData);
+          }}
+        >
+          <h3>Create a Post</h3>
+          <label>
+            Title:
+            <input
+              type="text"
+              name="title"
+              value={title}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Destination:
+            <input
+              type="text"
+              name="destination"
+              value={destination}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            content:
+            <input
+              type="text"
+              name="content"
+              value={content}
+              onChange={handleChange}
+            />
+          </label>
+          <button>Submit</button>
+        </form>
+      </div>
     </div>
   );
 }
