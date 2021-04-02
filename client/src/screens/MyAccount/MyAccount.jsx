@@ -5,31 +5,48 @@ import { getUsersPost } from "../../services/posts";
 
 export default function MyAccount(props) {
   const { allPosts, currentUser } = props;
-  const [postData, setPostData] = useState(null);
+  // const [postData, setPostData] = useState([]);
   const { id } = useParams();
-
-  useEffect(() => {
-    const fetchPostData = async () => {
-      const postData = await getUsersPost(currentUser.id);
-      setPostData(postData);
-    };
-    fetchPostData();
-  }, []);
   console.log(currentUser);
-  console.log(postData);
+  console.log(allPosts);
+  // useEffect(() => {
+  //   const fetchPostData = async () => {
+  //     const postData = await getUsersPost(currentUser.id);
+  //     setPostData(postData);
+  //   };
+  //   fetchPostData();
+  // }, []);
+  console.log(currentUser);
 
   return (
     <div>
-      {postData && (
+      {/* {currentUser && (
         <>
-          <Link to={`/posts/${postData.id}`}>
+          <Link to={`/posts/${allPosts.id}`}>
             <PostPreview
-              title={postData.title}
-              destination={postData.destination}
+              title={allPosts.title}
+              destination={allPosts.destination}
             />
           </Link>
         </>
-      )}
+      )} */}
+
+      {currentUser &&
+        allPosts &&
+        allPosts
+          .filter((post) => {
+            return post.user_id === currentUser.id;
+          })
+          .map((post) => (
+            <>
+              <Link to={`/posts/${post.id}`}>
+                <PostPreview
+                  title={post.title}
+                  destination={post.destination}
+                />
+              </Link>
+            </>
+          ))}
     </div>
   );
 }

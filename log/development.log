@@ -2647,3 +2647,503 @@ Completed 200 OK in 107ms (Views: 99.5ms | ActiveRecord: 6.0ms | Allocations: 78
 Completed 200 OK in 675ms (Views: 3.0ms | ActiveRecord: 509.3ms | Allocations: 11050)
 
 
+Started GET "/posts" for ::1 at 2021-04-02 09:21:17 -0500
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:21:17 -0500
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 894ms (Views: 2.1ms | ActiveRecord: 459.4ms | Allocations: 3279)
+
+
+  [1m[36mPost Load (68.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 1386ms (Views: 1380.9ms | ActiveRecord: 965.4ms | Allocations: 6211)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:21:26 -0500
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:21:26 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 15ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 737)
+
+
+  [1m[36mPost Load (11.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 76ms (Views: 64.2ms | ActiveRecord: 11.1ms | Allocations: 3005)
+
+
+Started GET "/users/13/posts" for ::1 at 2021-04-02 09:21:33 -0500
+Processing by PostsController#user_index as HTML
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 666)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/users/13/posts" for ::1 at 2021-04-02 09:22:05 -0500
+Processing by PostsController#user_index as HTML
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 665)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:17:in `user_index'
+Started GET "/posts" for ::1 at 2021-04-02 09:28:58 -0500
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:28:58 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 433ms (Views: 416.1ms | ActiveRecord: 46.0ms | Allocations: 7394)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 309ms (Views: 0.7ms | ActiveRecord: 114.4ms | Allocations: 5052)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:29:23 -0500
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:29:23 -0500
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (186.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 300ms (Views: 86.0ms | ActiveRecord: 207.4ms | Allocations: 5887)
+
+
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 521ms (Views: 0.5ms | ActiveRecord: 146.3ms | Allocations: 7455)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:30:35 -0500
+  [1m[35m (38.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 53ms (Views: 11.2ms | ActiveRecord: 8.1ms | Allocations: 9603)
+
+
+Started POST "/auth/login" for ::1 at 2021-04-02 09:31:14 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 631ms (Views: 0.3ms | ActiveRecord: 81.9ms | Allocations: 5443)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:31:49 -0500
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:31:49 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (26.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 34ms (Views: 6.9ms | ActiveRecord: 26.7ms | Allocations: 2455)
+
+
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 463ms (Views: 0.4ms | ActiveRecord: 410.6ms | Allocations: 4513)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:32:38 -0500
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:32:38 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (9.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 74ms (Views: 64.4ms | ActiveRecord: 9.4ms | Allocations: 2238)
+
+
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 174ms (Views: 0.7ms | ActiveRecord: 2.4ms | Allocations: 2362)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:33:08 -0500
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:33:08 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (25.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 205ms (Views: 179.3ms | ActiveRecord: 25.5ms | Allocations: 2238)
+
+
+  [1m[36mUser Load (27.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 205ms (Views: 0.4ms | ActiveRecord: 27.7ms | Allocations: 2315)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:33:15 -0500
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:33:15 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 1.2ms | Allocations: 2317)
+
+
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 39ms (Views: 2.9ms | ActiveRecord: 1.9ms | Allocations: 2317)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:34:00 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.8ms | Allocations: 1448)
+
+
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:34:00 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 1.1ms | Allocations: 697)
+
+
+Started POST "/auth/login" for ::1 at 2021-04-02 09:34:13 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 647ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 779)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:34:14 -0500
+Processing by PostsController#index as HTML
+Started GET "/users/13/posts" for ::1 at 2021-04-02 09:34:14 -0500
+Processing by PostsController#user_index as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mPost Load (3.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17:in `user_index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.6ms | Allocations: 1564)
+
+
+Completed 200 OK in 59ms (Views: 54.3ms | ActiveRecord: 3.9ms | Allocations: 3219)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:18:in `user_index'
+Started GET "/posts" for ::1 at 2021-04-02 09:36:17 -0500
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:36:17 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+Completed 200 OK in 224ms (Views: 183.9ms | ActiveRecord: 24.1ms | Allocations: 6137)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:36:17 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (5.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 95ms (Views: 89.6ms | ActiveRecord: 5.3ms | Allocations: 1579)
+
+
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 247ms (Views: 0.8ms | ActiveRecord: 25.9ms | Allocations: 10276)
+
+
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:36:19 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 41ms (Views: 0.4ms | ActiveRecord: 5.9ms | Allocations: 698)
+
+
+Started GET "/users/13/posts" for ::1 at 2021-04-02 09:37:25 -0500
+Processing by PostsController#user_index as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:18:in `user_index'
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 13.2ms | Allocations: 1089)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:19:in `user_index'
+Started GET "/users/13/posts" for ::1 at 2021-04-02 09:40:20 -0500
+Processing by PostsController#user_index as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:18:in `user_index'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 1088)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:19:in `user_index'
+Started POST "/auth/login" for ::1 at 2021-04-02 09:41:07 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 648ms (Views: 1.3ms | ActiveRecord: 6.9ms | Allocations: 878)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:41:08 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 96ms (Views: 78.8ms | ActiveRecord: 0.8ms | Allocations: 1448)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:42:02 -0500
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:42:02 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (5.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 145ms (Views: 138.6ms | ActiveRecord: 5.8ms | Allocations: 2486)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 571ms (Views: 0.5ms | ActiveRecord: 31.3ms | Allocations: 4469)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:44:52 -0500
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:44:52 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 74ms (Views: 72.7ms | ActiveRecord: 1.3ms | Allocations: 2227)
+
+
+  [1m[36mUser Load (19.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 68ms (Views: 0.3ms | ActiveRecord: 19.0ms | Allocations: 2336)
+
+
+Started POST "/auth/login" for ::1 at 2021-04-02 09:55:04 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"email"=>"allison@me.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 959ms (Views: 2.3ms | ActiveRecord: 69.8ms | Allocations: 2871)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:55:06 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (140.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 399ms (Views: 256.8ms | ActiveRecord: 140.3ms | Allocations: 1469)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 09:55:29 -0500
+Started GET "/auth/verify" for ::1 at 2021-04-02 09:55:30 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (48.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 646ms (Views: 49.2ms | ActiveRecord: 583.8ms | Allocations: 5617)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 154ms (Views: 4.5ms | ActiveRecord: 18.6ms | Allocations: 5004)
+
+
+Started GET "/comments" for ::1 at 2021-04-02 10:05:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/comments"):
+  
+Started GET "/comments" for ::1 at 2021-04-02 10:05:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/comments"):
+  
+Started GET "/comments" for ::1 at 2021-04-02 10:06:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/comments"):
+  
+Started GET "/comments" for ::1 at 2021-04-02 10:06:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/comments"):
+  
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 13]]
+  [1m[36mComment Load (6.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 11]]
+  [1m[36mPost Destroy (16.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 11]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 13]]
+  [1m[36mUser Destroy (6.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 14]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 12]]
+  [1m[36mPost Destroy (1.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 12]]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 14]]
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 14]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mComment Load (3.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 13]]
+  [1m[36mPost Destroy (2.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 13]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 15]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 14]]
+  [1m[36mPost Destroy (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 14]]
+  [1m[36mComment Load (3.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 16]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 15]]
+  [1m[36mPost Destroy (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 15]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 16]]
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 16]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 17]]
+  [1m[36mPost Destroy (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 17]]
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 18]]
+  [1m[36mPost Destroy (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 18]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mUser Destroy (1.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 17]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 18]]
+  [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 18]]
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 18]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allison@me.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (6.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Allison"], ["email", "allison@me.com"], ["password_digest", "$2a$12$XLLOhhk6u09rwUZgHtRFDukVp4NVn35P8YGvBeipxSG6v2ITGTxby"], ["created_at", "2021-04-02 15:07:37.026513"], ["updated_at", "2021-04-02 15:07:37.026513"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "matt@me.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Matt"], ["email", "matt@me.com"], ["password_digest", "$2a$12$iaXxIkQdLUxB1VyYULxiYu9THbl0zKDSsvhT1rJZwcvJDE4sa.kbu"], ["created_at", "2021-04-02 15:07:37.364282"], ["updated_at", "2021-04-02 15:07:37.364282"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "reese@me.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Reese"], ["email", "reese@me.com"], ["password_digest", "$2a$12$R53yDcI4CzAPGAszVfwTIeKQMFyEeviFoqgTe0Gc5jvy39FUHE4Zy"], ["created_at", "2021-04-02 15:07:37.700361"], ["updated_at", "2021-04-02 15:07:37.700361"]]
+  [1m[36mTRANSACTION (41.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hutch@me.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Hutch"], ["email", "hutch@me.com"], ["password_digest", "$2a$12$.zgk1dJYIh488N2Xn6ci..bZuebcQZCW2Oq7JETBvcq/7IhQsHOr."], ["created_at", "2021-04-02 15:07:38.090603"], ["updated_at", "2021-04-02 15:07:38.090603"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike@me.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Mike"], ["email", "mike@me.com"], ["password_digest", "$2a$12$nabmWEbdKGTLIhYxOtxgouF6xGdjYv0i9dH1KVWtUk3QRlcCPAWpu"], ["created_at", "2021-04-02 15:07:38.431156"], ["updated_at", "2021-04-02 15:07:38.431156"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (2.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "destination", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Go here"], ["destination", "texas"], ["content", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"], ["user_id", 19], ["created_at", "2021-04-02 15:07:38.443653"], ["updated_at", "2021-04-02 15:07:38.443653"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "destination", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Go here"], ["destination", "Chicago"], ["content", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"], ["user_id", 19], ["created_at", "2021-04-02 15:07:38.461861"], ["updated_at", "2021-04-02 15:07:38.461861"]]
+  [1m[36mTRANSACTION (40.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "destination", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Go here"], ["destination", "Dallas"], ["content", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"], ["user_id", 20], ["created_at", "2021-04-02 15:07:38.512367"], ["updated_at", "2021-04-02 15:07:38.512367"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "destination", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Lets explor the unknown"], ["destination", "space"], ["content", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"], ["user_id", 21], ["created_at", "2021-04-02 15:07:38.528997"], ["updated_at", "2021-04-02 15:07:38.528997"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (8.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "destination", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "hutch is going to texas again"], ["destination", "texas"], ["content", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"], ["user_id", 22], ["created_at", "2021-04-02 15:07:38.537105"], ["updated_at", "2021-04-02 15:07:38.537105"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "destination", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Go here part 2"], ["destination", "italy"], ["content", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"], ["user_id", 23], ["created_at", "2021-04-02 15:07:38.567506"], ["updated_at", "2021-04-02 15:07:38.567506"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "destination", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "hutch is going to texas"], ["destination", "texas"], ["content", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"], ["user_id", 23], ["created_at", "2021-04-02 15:07:38.573725"], ["updated_at", "2021-04-02 15:07:38.573725"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "destination", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "go visit mike"], ["destination", "Italy"], ["content", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"], ["user_id", 23], ["created_at", "2021-04-02 15:07:38.588427"], ["updated_at", "2021-04-02 15:07:38.588427"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "destination", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Go see Mike!"], ["destination", "Paris"], ["content", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"], ["user_id", 23], ["created_at", "2021-04-02 15:07:38.595107"], ["updated_at", "2021-04-02 15:07:38.595107"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (2.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "this is rad"], ["user_id", 22], ["post_id", 19], ["created_at", "2021-04-02 15:07:38.613234"], ["updated_at", "2021-04-02 15:07:38.613234"]]
+  [1m[36mTRANSACTION (40.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+Started GET "/posts" for ::1 at 2021-04-02 10:07:45 -0500
+Started GET "/auth/verify" for ::1 at 2021-04-02 10:07:45 -0500
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 24ms (Allocations: 2688)
+
+
+  
+NameError (undefined local variable or method `ok' for #<PostsController:0x0000000000a028>):
+  
+app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 822ms (Views: 0.7ms | ActiveRecord: 61.0ms | Allocations: 37097)
+
+
+Started GET "/auth/verify" for ::1 at 2021-04-02 10:09:22 -0500
+Started GET "/posts" for ::1 at 2021-04-02 10:09:22 -0500
+  [1m[35m (36.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms | Allocations: 6385)
+
+
+  
+NameError (undefined local variable or method `ok' for #<PostsController:0x00000000005618>):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 180ms (Views: 0.4ms | ActiveRecord: 21.8ms | Allocations: 38900)
+
+
+Started GET "/posts" for ::1 at 2021-04-02 10:11:35 -0500
+Started GET "/auth/verify" for ::1 at 2021-04-02 10:11:35 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (112.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mComment Load (13.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 19]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mComment Load (2.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 20]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mComment Load (26.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 21]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mComment Load (3.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 22]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mComment Load (7.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 23]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mComment Load (3.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 24]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 25]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 26]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 27]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 2317ms (Views: 1690.5ms | ActiveRecord: 606.3ms | Allocations: 17710)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 38ms (Views: 0.4ms | ActiveRecord: 22.7ms | Allocations: 2736)
+
+

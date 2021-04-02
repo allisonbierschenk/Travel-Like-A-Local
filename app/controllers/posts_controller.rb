@@ -6,16 +6,18 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     @posts = Post.all
-    render json: @posts
+    render json: @posts, include: :comments, status: :ok
   end
 
   # GET /posts/1
   def show
-    render json: @post, include: :comments
+    render json: @post, include: :comments, status: :ok
   end
+
   def user_index
-    @posts = Post.where(user_id: @current_user.id)
-    render json: @posts, include: :comments
+    @users = User.find(params[:user_id])
+    @posts = Post.where(user_id: @user.id)
+    render json: @posts, include: :comments, status: :ok
   end
 
   # POST /posts
