@@ -1,31 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
 export default function Nav(props) {
   const { currentUser, handleLogout } = props;
   return (
     <header>
-      <Link to="/">
-        <h1>Travel like a Local</h1>
-      </Link>
-      {currentUser ? (
-        <>
-          <Link to="/myaccount">
-            <p>{currentUser.username}'s Account</p>
-          </Link>
-          <button onClick={handleLogout}>Logout</button>
-        </>
-      ) : (
-        <div>
-          <button>
-            <Link to="/signin">SIGNIN</Link>
-          </button>
-          <button>
-            <Link to="/signup">SIGNUP</Link>
-          </button>
-        </div>
-      )}
-      <hr />
+      <div className="nav">
+        <Link to="/">
+          <a className="left-side">
+            <img src="https://i.imgur.com/JSkNgG8.png?1" />
+            <h1 className="logo">Travel Like A Local</h1>
+          </a>
+        </Link>
+        {currentUser ? (
+          <div className="right-side">
+            <Link to="/myaccount">
+              <p>{currentUser.username}'s Account</p>
+            </Link>
+            <button className="button" onClick={handleLogout}>
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div className="right-side">
+            <button className="button">
+              <Link className="button-text" to="/signin">
+                SIGNIN
+              </Link>
+            </button>
+            <button className="button">
+              <Link className="button-text" to="/signup">
+                SIGNUP
+              </Link>
+            </button>
+          </div>
+        )}
+      </div>
+
       {props.children}
     </header>
   );

@@ -12,7 +12,7 @@ export default function PostPreview(props) {
           <h3>{title}</h3>
           <h3>{destination}</h3>
           <h3>{username}</h3>
-          <button>Continue reading...</button>
+          <button className="button">Continue reading...</button>
         </div>
       </Link>
     </div>

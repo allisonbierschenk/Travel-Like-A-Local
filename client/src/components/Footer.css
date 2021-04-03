@@ -1,0 +1,10 @@
+.footer {
+  background-color: rgb(255, 147, 14);
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.footer-text:hover {
+  color: white;
+  text-decoration: none;
+}

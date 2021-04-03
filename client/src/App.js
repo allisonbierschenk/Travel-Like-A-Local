@@ -51,7 +51,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <Switch>
         <Route path="/signin">
           <SignIn handleLogin={handleLogin} />

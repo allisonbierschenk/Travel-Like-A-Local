@@ -39,9 +39,11 @@ export default function PostDetail(props) {
           {currentUser?.id === post.user_id && (
             <>
               <Link to={`/posts/${post.id}/edit`}>
-                <button>Update</button>
+                <button className="button">Update</button>
               </Link>
-              <button onClick={() => removePost(post.id)}>Delete</button>
+              <button className="button" onClick={() => removePost(post.id)}>
+                Delete
+              </button>
             </>
           )}
           <p>Leave a comment below!</p>

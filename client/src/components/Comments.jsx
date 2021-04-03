@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Comments.css";
 
 export default function Comments(props) {
   const [commentData, setCommentData] = useState({
@@ -18,20 +19,21 @@ export default function Comments(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     createComment(postId, commentData);
-    console.log(e.target, "what");
+    setCommentData({ content: "" });
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>What are your thoughts?</label>
-        <input
+    <div className="comments">
+      <form onSubmit={handleSubmit} className="comments">
+        <label className="label">What are your thoughts?</label>
+        <textarea
+          className="text-area"
           type="text"
           name="content"
           value={content}
           onChange={handleChange}
-        ></input>
-        <button>Submit</button>
+        ></textarea>
+        <button className="submit-button">Submit</button>
       </form>
     </div>
   );

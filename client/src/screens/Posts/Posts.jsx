@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import HeroImage from "../../components/HeroImage";
 import PostPreview from "../../components/PostPreview";
-import Search from "../../components/Sesarch";
+import Search from "../../components/Search";
+import "./Posts.css";
 
 export default function Posts(props) {
   const { allPosts } = props;
@@ -12,25 +14,23 @@ export default function Posts(props) {
     );
     setQueriedPosts(newQueriedPost);
   };
-  console.log(queriedPosts.length);
-  console.log(allPosts);
 
   const handleSubmit = (event) => event.preventDefault();
-
   const allPostJSX = allPosts.map((post, index) => <PostPreview post={post} />);
-  console.log(allPostJSX);
-
   const postJSX = queriedPosts.map((post, index) => (
     <PostPreview post={post} />
   ));
 
-  console.log(postJSX);
-
   return (
     <div>
-      <Search onSubmit={handleSubmit} onChange={handleSearch} />
-      <div className="posts-list">
-        {queriedPosts.length ? postJSX : allPostJSX}
+      <div className="hero">
+        <HeroImage />
+      </div>
+      <div className="homepage-body">
+        <Search onSubmit={handleSubmit} onChange={handleSearch} />
+        <div className="posts-list">
+          {queriedPosts.length ? postJSX : allPostJSX}
+        </div>
       </div>
     </div>
   );

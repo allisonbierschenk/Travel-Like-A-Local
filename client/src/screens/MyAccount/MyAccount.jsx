@@ -3,7 +3,6 @@ import SubNav from "../../components/SubNav";
 
 export default function MyAccount(props) {
   const { allPosts, currentUser } = props;
-  console.log(allPosts);
 
   return (
     <div>
