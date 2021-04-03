@@ -15,12 +15,7 @@ export default function MyAccount(props) {
           })
           .map((post) => (
             <>
-              <PostPreview
-                post={post}
-                // allPosts={allPosts}
-                // title={post.title}
-                // destination={post.destination}
-              />
+              <PostPreview post={post} />
             </>
           ))}
     </div>

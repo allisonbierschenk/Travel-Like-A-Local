@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useParams } from "react-router";
 
 export default function Comments(props) {
   const [commentData, setCommentData] = useState({
@@ -7,7 +6,6 @@ export default function Comments(props) {
   });
   const { content } = commentData;
   const { createComment, postId } = props;
-  // const { id } = useParams();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,14 +15,15 @@ export default function Comments(props) {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createComment(postId, commentData);
+    console.log(e.target, "what");
+  };
+
   return (
     <div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          createComment(postId, commentData);
-        }}
-      >
+      <form onSubmit={handleSubmit}>
         <label>What are your thoughts?</label>
         <input
           type="text"

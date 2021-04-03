@@ -45,9 +45,9 @@ export default function PostDetail(props) {
             </>
           )}
           <p>Leave a comment below!</p>
-          <p>
-            <Comments createComment={createComment} postId={post.id} />
-          </p>
+
+          <Comments createComment={createComment} postId={post.id} />
+
           {comments &&
             comments.map((comment) => {
               return <p>{comment.content}</p>;

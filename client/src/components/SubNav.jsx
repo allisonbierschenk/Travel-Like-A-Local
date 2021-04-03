@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./SubNav.css";
 
 export default function SubNav(props) {
-  const { currentUser } = props;
-
   return (
     <div className="sub-nav">
       <Link to="/myaccount">

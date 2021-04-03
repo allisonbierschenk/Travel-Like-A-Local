@@ -4,7 +4,6 @@ import { Switch, Route, useHistory } from "react-router-dom";
 
 // import styling
 import "./App.css";
-import PostPreview from "./components/PostPreview";
 import MainContainer from "./containers/maincontainer/MainContainer";
 // import MainContainer from "./containers/MainContainer";
 
