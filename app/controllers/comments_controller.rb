@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   def index
     @post = Post.find(params[:post_id])
     @comments = Comment.where(post_id: @post.id)
-    render json: @comments, include: :post, status: :ok
+    render json: @comments, include: [:post, :user], status: :ok
   end
 
   # GET /comments/1
@@ -19,8 +19,8 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
-    @comment.post = @post
     @comment.user = @current_user
+    @comment.post = @post
 
 
     if @comment.save
@@ -52,6 +52,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:content, :post_id)
     end
 end

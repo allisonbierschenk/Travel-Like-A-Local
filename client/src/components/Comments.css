@@ -1,0 +1,37 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-button {
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  background-color: rgb(22, 103, 103);
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+.text-area {
+  height: 5vh;
+  width: 60vw;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.label {
+  align-content: left;
+}
+
+.submit-button:hover,
+.submit-button:focus,
+.submit-button:visited {
+  color: white;
+  outline: none;
+  background-color: rgb(13, 154, 154);
+}

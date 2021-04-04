@@ -1,0 +1,8 @@
+.sub-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.link:where {
+  color: blue;
+}

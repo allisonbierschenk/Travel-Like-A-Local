@@ -13,19 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useState } from "react";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="/">
-        Travel Like A Local
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import Footer from "../../components/Footer";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -130,7 +118,7 @@ export default function SignIn(props) {
         </form>
       </div>
       <Box mt={8}>
-        <Copyright />
+        <Footer />
       </Box>
     </Container>
   );
