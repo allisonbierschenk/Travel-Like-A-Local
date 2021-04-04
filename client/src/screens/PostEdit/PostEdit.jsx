@@ -33,6 +33,7 @@ export default function PostEdit(props) {
   return (
     <div>
       <SubNav />
+      <h3>Update your Post</h3>
       <form
         className="form-container"
         onSubmit={(e) => {
@@ -40,32 +41,33 @@ export default function PostEdit(props) {
           updatePost(id, formData);
         }}
       >
-        <h3>Update your Post</h3>
-        <label>
-          Title:
+        <div className="float-label">
           <input
-            type="text"
+            className="title"
+            type="title"
             name="title"
             value={title}
             onChange={handleChange}
           />
-        </label>
-        <label>
-          Destination:
+        </div>
+        <div className="float-label">
           <input
-            type="text"
+            className="destination"
+            type="destination"
             name="destination"
             value={destination}
             onChange={handleChange}
           />
-        </label>
-        <textarea
-          className="new-text-area"
-          type="text"
-          name="content"
-          value={content}
-          onChange={handleChange}
-        />
+        </div>
+        <div className="float-label">
+          <textarea
+            className="new-text-area"
+            type="text"
+            name="content"
+            value={content}
+            onChange={handleChange}
+          />
+        </div>
         <button className="continue-button">Submit</button>
       </form>
     </div>

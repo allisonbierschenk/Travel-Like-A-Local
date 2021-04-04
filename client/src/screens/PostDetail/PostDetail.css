@@ -1,0 +1,31 @@
+.post-detail {
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+.content {
+  text-align: left;
+  white-space: pre-line;
+}
+
+.post-detail-title {
+  font-size: 30px;
+}
+
+.post-detail-destination {
+  font-size: 30px;
+  text-align: left;
+}
+
+.each-comment {
+  text-align: left;
+  border-bottom: 1px solid lightgray;
+  font-size: 16px;
+}
+p,
+form,
+label,
+textarea,
+button {
+  outline: none;
+}

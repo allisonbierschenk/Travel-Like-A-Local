@@ -6,7 +6,7 @@ export default function Comments(props) {
     content: "",
   });
   const { content } = commentData;
-  const { createComment, postId } = props;
+  const { createComment, postId, currentUser } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;

@@ -25,3 +25,7 @@ input {
   border: 1px solid lightgray;
   font-size: 18px;
 }
+
+body {
+  letter-spacing: none;
+}

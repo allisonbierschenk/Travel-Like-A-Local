@@ -27,7 +27,6 @@ export default function PostCreate(props) {
   return (
     <div>
       <SubNav />
-
       <div>
         <h3>Create a Post</h3>
         <form
@@ -61,15 +60,18 @@ export default function PostCreate(props) {
               Destination:
             </label>
           </div>
-          {/* <label>Tell your story...</label> */}
-          <textarea
-            className="new-text-area"
-            type="text"
-            name="content"
-            value={content}
-            onChange={handleChange}
-            placeholder=" Tell your story..."
-          />
+          <div className="float-label">
+            <label className={isActive ? "Active" : ""} htmlFor="new-text-area">
+              Tell your story...
+            </label>
+            <textarea
+              className="new-text-area"
+              type="text"
+              name="content"
+              value={content}
+              onChange={handleChange}
+            />
+          </div>
           <button className="continue-button">Submit</button>
         </form>
       </div>

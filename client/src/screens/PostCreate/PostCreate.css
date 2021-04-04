@@ -2,57 +2,57 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 73vh;
+  height: 90vh;
   justify-content: space-around;
 }
 
-.new-text-area {
-  width: 70%;
-  height: 50vh;
-  border: 1px solid lightgray;
-  outline: none;
-}
 textarea {
   font-family: "Poiret One", cursive;
   font-size: 24px;
   padding: 10px;
 }
 
-.title,
-.destination {
-  margin-left: 5px;
-  font-size: 20px;
-  width: 24vw;
-}
-
 .float-label {
   display: flex;
   flex-direction: column;
-  min-width: 350px;
   position: relative;
 }
 
 .float-label input {
   width: 50vw;
-  height: 4vh;
-  padding: 14px 16px 0 10px;
+  padding: 10px;
   outline: 0;
   border: 1px solid lightgray;
   background: #fff;
   font-family: "Poiret One", cursive;
   font-size: 24px;
+  height: 5vh;
+  caret-color: lightslategray;
+  color: black;
+}
+
+.float-label textarea {
+  font-family: "Poiret One", cursive;
+  font-size: 24px;
+  outline: 0;
+  border: 1px solid lightgray;
+  background: #fff;
+  font-family: "Poiret One", cursive;
+  width: 50vw;
+  height: 60vh;
+  color: black;
 }
 
 .float-label label {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Poiret One", cursive;
-  padding: 0 18px;
-  color: rgb(8, 8, 8);
+  padding: 0 12px;
   pointer-events: none;
   position: absolute;
-  transform: translate(0, 12px) scale(1);
+  transform: translate(0, 14px) scale(1);
 }
 
 .float-label .Active {
-  transform: translate(-20%, -10%) scale(0.7);
+  transform: translate(10%, -1vh);
+  background-color: white;
 }
