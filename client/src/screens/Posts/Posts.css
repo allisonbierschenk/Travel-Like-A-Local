@@ -1,12 +1,53 @@
 .homepage-body {
   display: grid;
-  background-image: linear-gradient(#52b8c6, #93ccc6);
   padding-bottom: 10%;
+  background: url("https://i.imgur.com/OS39pqq.jpg?1") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-width: 1024px;
+  width: 100%;
+  background-color: rgba(147, 204, 198, 1);
+}
+.homepage-body-overlay {
+  display: grid;
+  padding-bottom: 10%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(82, 184, 198, 0),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("https://i.imgur.com/OS39pqq.jpg?1");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-width: 1024px;
+  width: 100%;
 }
 
 .posts-list {
-  margin: 10px;
+  padding: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.header {
+  font-size: 30px;
+  font-weight: bold;
+}
+.sub-header {
+  font-size: 24px;
+}
+.paragraph {
+  font-size: 20px;
+}
+.intro {
+  text-align: left;
+  margin-left: 10vw;
+  margin-bottom: -20px;
+  color: purple;
+  background-color: rgba(255, 255, 255, 0.55);
 }

@@ -3,6 +3,7 @@
   justify-content: space-around;
 }
 
-.link:where {
-  color: blue;
+.link:hover {
+  color: rgb(13, 154, 154);
+  font-weight: bold;
 }

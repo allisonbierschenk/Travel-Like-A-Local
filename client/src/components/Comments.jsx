@@ -16,9 +16,9 @@ export default function Comments(props) {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    createComment(postId, commentData);
+    await createComment(postId, commentData);
     setCommentData({ content: "" });
   };
 
