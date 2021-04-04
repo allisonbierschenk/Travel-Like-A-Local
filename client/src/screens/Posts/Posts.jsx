@@ -23,9 +23,7 @@ export default function Posts(props) {
 
   return (
     <div>
-      <div className="hero">
-        <HeroImage />
-      </div>
+      <HeroImage />
       <div className="homepage-body">
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <div className="posts-list">

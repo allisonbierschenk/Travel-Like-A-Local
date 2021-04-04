@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SubNav from "../../components/SubNav";
+import "./PostCreate.css";
 
 export default function PostCreate(props) {
   const [formData, setFormData] = useState({
@@ -21,42 +22,45 @@ export default function PostCreate(props) {
     <div>
       <SubNav />
 
-      <div className="form-container">
+      <div>
+        <h3>Create a Post</h3>
         <form
+          className="form-container"
           onSubmit={(e) => {
             e.preventDefault();
             createPost(formData);
           }}
         >
-          <h3>Create a Post</h3>
-          <label>
-            Title:
+          <div>
+            <label htmlFor="title">Title:</label>
             <input
+              id="title"
               type="text"
               name="title"
               value={title}
               onChange={handleChange}
             />
-          </label>
-          <label>
-            Destination:
+          </div>
+          <div>
+            <label htmlFor="destination">Destination:</label>
             <input
+              id="destination"
               type="text"
               name="destination"
               value={destination}
               onChange={handleChange}
             />
-          </label>
-          <label>
-            Content:
-            <input
-              type="text"
-              name="content"
-              value={content}
-              onChange={handleChange}
-            />
-          </label>
-          <button>Submit</button>
+          </div>
+          {/* <label>Tell your story...</label> */}
+          <textarea
+            className="new-text-area"
+            type="text"
+            name="content"
+            value={content}
+            onChange={handleChange}
+            placeholder=" Tell your story..."
+          />
+          <button className="continue-button">Submit</button>
         </form>
       </div>
     </div>

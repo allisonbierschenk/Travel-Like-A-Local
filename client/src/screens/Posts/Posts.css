@@ -1,4 +1,12 @@
 .homepage-body {
   display: grid;
-  padding-top: 400px;
+  background-image: linear-gradient(#52b8c6, #93ccc6);
+  padding-bottom: 10%;
+}
+
+.posts-list {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

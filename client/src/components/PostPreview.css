@@ -1,0 +1,36 @@
+.post-preview {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #52b8c6;
+  width: 45vw;
+  margin-bottom: 4vh;
+}
+
+.post-preview:hover {
+  border: 1.5px solid #c2c204;
+  box-shadow: 0px 4px 4px rgba(97, 97, 95, 0.25),
+    0px 4px 4px rgba(97, 97, 95, 0.22);
+}
+
+.title {
+  font-size: 24px;
+}
+.destination {
+  font-size: 20px;
+}
+
+.continue-button {
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  background-color: #52b8c6;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.continue-button:hover {
+  background-color: rgb(13, 154, 154);
+}

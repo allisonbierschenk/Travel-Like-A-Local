@@ -40,10 +40,12 @@
 
 .button:hover {
   background-color: rgb(13, 154, 154);
+  outline: none;
 }
 
-.butt:visited {
+.button:visited {
   color: white;
+  outline: none;
 }
 
 .button-text {

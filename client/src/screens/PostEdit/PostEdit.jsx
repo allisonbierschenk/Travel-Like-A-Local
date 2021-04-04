@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import SubNav from "../../components/SubNav";
 
 export default function PostEdit(props) {
   const [formData, setFormData] = useState({
@@ -30,8 +31,10 @@ export default function PostEdit(props) {
     }));
   };
   return (
-    <div className="form-container">
+    <div>
+      <SubNav />
       <form
+        className="form-container"
         onSubmit={(e) => {
           e.preventDefault();
           updatePost(id, formData);
@@ -56,16 +59,14 @@ export default function PostEdit(props) {
             onChange={handleChange}
           />
         </label>
-        <label>
-          Content:
-          <input
-            type="text"
-            name="content"
-            value={content}
-            onChange={handleChange}
-          />
-        </label>
-        <button>Submit</button>
+        <textarea
+          className="new-text-area"
+          type="text"
+          name="content"
+          value={content}
+          onChange={handleChange}
+        />
+        <button className="continue-button">Submit</button>
       </form>
     </div>
   );

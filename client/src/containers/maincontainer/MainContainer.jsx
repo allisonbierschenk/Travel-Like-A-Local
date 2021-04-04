@@ -39,13 +39,13 @@ export default function MainContainer(props) {
         return post.id === Number(id) ? updatedPost : post;
       })
     );
-    history.push("/myaccount");
+    history.goBack();
   };
 
   const removePost = async (id) => {
     await destroyPost(id);
     setAllPosts((prevState) => prevState.filter((post) => post.id !== id));
-    history.push("/myaccount");
+    history.goBack();
   };
   return (
     <>
