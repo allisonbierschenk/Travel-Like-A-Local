@@ -3,6 +3,7 @@ import SubNav from "../../components/SubNav";
 import "./PostCreate.css";
 
 export default function PostCreate(props) {
+  const [isActive, setIsActive] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     destination: "",
@@ -17,6 +18,11 @@ export default function PostCreate(props) {
       ...prevState,
       [name]: value,
     }));
+    if (value !== "") {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
   };
   return (
     <div>
@@ -31,25 +37,29 @@ export default function PostCreate(props) {
             createPost(formData);
           }}
         >
-          <div>
-            <label htmlFor="title">Title:</label>
+          <div className="float-label">
             <input
-              id="title"
-              type="text"
+              className="title"
+              type="title"
               name="title"
               value={title}
               onChange={handleChange}
             />
+            <label className={isActive ? "Active" : ""} htmlFor="title">
+              Title:
+            </label>
           </div>
-          <div>
-            <label htmlFor="destination">Destination:</label>
+          <div className="float-label">
             <input
-              id="destination"
-              type="text"
+              className="destination"
+              type="destination"
               name="destination"
               value={destination}
               onChange={handleChange}
             />
+            <label className={isActive ? "Active" : ""} htmlFor="destination">
+              Destination:
+            </label>
           </div>
           {/* <label>Tell your story...</label> */}
           <textarea
