@@ -24,20 +24,7 @@ export default function Posts(props) {
   return (
     <div>
       <HeroImage />
-      <div className="homepage-body" className="homepage-body-overlay">
-        <div className="welcome">
-          <div className="intro">
-            <div className="header">Welcome！</div>
-            <div className="sub-header">I'm Allison</div>
-            <div className="paragraph">
-              Traveling has been a part of my life for 15 years. Explore the
-              site to find little gems travelors have discovered on their
-              journeys.
-            </div>
-            <div className="paragraph-2">⋯ Happy Travels ⋯</div>
-          </div>
-          <div className="border"></div>
-        </div>
+      <div className="homepage-body-overlay">
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <div className="posts-list">
           {queriedPosts.length ? postJSX : allPostJSX}
