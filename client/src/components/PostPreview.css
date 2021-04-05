@@ -1,10 +1,13 @@
 .post-preview {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 45vw;
+  height: 20vh;
   margin-bottom: 4vh;
   background-color: rgba(16, 60, 23, 0.721);
   color: white;
+  justify-content: space-evenly;
 }
 
 .post-preview:hover {
@@ -28,11 +31,12 @@
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
+  width: 45vw;
 }
 
 .continue-button:hover {
-  background-color: #edc951;
-  color: #c65652;
+  background-color: #c65652;
+  color: rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 950px) {
