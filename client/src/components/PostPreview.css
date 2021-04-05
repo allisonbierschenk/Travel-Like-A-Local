@@ -1,15 +1,15 @@
 .post-preview {
   display: flex;
   flex-direction: column;
-  border: 1px solid #52b8c6;
   width: 45vw;
   margin-bottom: 4vh;
+  /* height: auto; */
+  background-color: rgba(16, 60, 23, 0.863);
+  color: white;
 }
 
 .post-preview:hover {
-  border: 1.5px solid #c2c204;
-  box-shadow: 0px 4px 4px rgba(97, 97, 95, 0.25),
-    0px 4px 4px rgba(97, 97, 95, 0.22);
+  box-shadow: 6px 6px #edc951cb;
 }
 
 .title {
@@ -24,7 +24,7 @@
   font-weight: bold;
   font-size: 20px;
   border: none;
-  background-color: #52b8c6;
+  background-color: #c65652;
   color: white;
   padding: 5px;
   padding-left: 10px;
@@ -32,5 +32,15 @@
 }
 
 .continue-button:hover {
-  background-color: rgb(13, 154, 154);
+  background-color: #edc951;
+  color: #c65652;
+}
+
+@media screen and (max-width: 950px) {
+  .post-preview {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 80vw;
+  }
 }

@@ -13,10 +13,6 @@ export default function PostDetail(props) {
   const [comments, setComments] = useState([]);
   const { id } = useParams();
 
-  // const getUser = async () => {
-  //   const user = await registerUser(registerData)
-  // }
-
   const getComments = async () => {
     const comments = await getAllComments(id);
     setComments(comments);
@@ -25,7 +21,7 @@ export default function PostDetail(props) {
   const createComment = async (commentData, id) => {
     const newComment = await addComment(commentData, id);
     setComments((prevState) => [...prevState, newComment]);
-    history.push(`/posts/${post.id}`);
+    // history.push(`/posts/${post.id}`);
   };
   useEffect(() => {
     if (allPosts.length) {
@@ -57,7 +53,7 @@ export default function PostDetail(props) {
               comments.map((comment) => {
                 return (
                   <p className="each-comment">
-                    {comment.user.username} {comment.content}
+                    {comment.user?.username} {comment.content}
                   </p>
                 );
               })}
