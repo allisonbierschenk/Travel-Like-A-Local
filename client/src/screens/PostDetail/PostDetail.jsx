@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Comments from "../../components/Comments";
-import { registerUser } from "../../services/auth";
 import { getAllComments, addComment } from "../../services/comments";
 import "./PostDetail.css";
 
 export default function PostDetail(props) {
   const [post, setPost] = useState(null);
-  const history = useHistory();
   const { allPosts, removePost, currentUser, username } = props;
   const [comments, setComments] = useState([]);
   const { id } = useParams();
@@ -21,7 +19,6 @@ export default function PostDetail(props) {
   const createComment = async (commentData, id) => {
     const newComment = await addComment(commentData, id);
     setComments((prevState) => [...prevState, newComment]);
-    // history.push(`/posts/${post.id}`);
   };
   useEffect(() => {
     if (allPosts.length) {

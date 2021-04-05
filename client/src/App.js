@@ -1,18 +1,11 @@
-// package imports
 import { useState, useEffect } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
-
-// import styling
 import "./App.css";
 import MainContainer from "./containers/maincontainer/MainContainer";
-// import MainContainer from "./containers/MainContainer";
-
-// component imports
 import Layout from "./layout/Layout";
 import SignIn from "./screens/SignIn/SignIn";
 import SignUp from "./screens/SignUp/SignUp";
 
-// function imports
 import {
   loginUser,
   registerUser,

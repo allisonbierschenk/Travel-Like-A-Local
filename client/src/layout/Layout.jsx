@@ -8,7 +8,6 @@ export default function Layout(props) {
     <div className="layout">
       <Nav currentUser={currentUser} handleLogout={handleLogout} />
       {props.children}
-
       <Footer />
     </div>
   );

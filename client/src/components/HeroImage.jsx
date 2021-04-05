@@ -4,7 +4,6 @@ import "./HeroImage.css";
 export default function HeroImage() {
   return (
     <div className="hero">
-      {/* <div className="welcome"> */}
       <div className="intro">
         <div className="header">Welcome！</div>
         <div className="sub-header">I'm Allison</div>
@@ -15,7 +14,6 @@ export default function HeroImage() {
         <div className="paragraph-2">⋯ Happy Travels ⋯</div>
         <div className="border"></div>
       </div>
-      {/* </div> */}
     </div>
   );
 }

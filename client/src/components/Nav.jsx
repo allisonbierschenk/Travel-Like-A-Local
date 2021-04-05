@@ -37,7 +37,6 @@ export default function Nav(props) {
           </div>
         )}
       </div>
-
       {props.children}
     </header>
   );

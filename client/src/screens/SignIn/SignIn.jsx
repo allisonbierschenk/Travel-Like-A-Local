@@ -3,8 +3,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
@@ -14,10 +12,16 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useState } from "react";
 import Footer from "../../components/Footer";
-import "./SignIn.css";
 import Logo from "../../components/Logo";
+import { createMuiTheme } from "@material-ui/core/styles";
 
-const font = "'Poiret+One', cursive";
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#103C17",
+    },
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -28,18 +32,15 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.warning.main,
+    backgroundColor: theme.palette.primary.main,
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "100%",
     marginTop: theme.spacing(1),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: theme.palette.warning.main,
-  },
-  typography: {
-    fontFamily: font,
+    backgroundColor: theme.palette.primary.main,
   },
 }));
 
@@ -82,7 +83,6 @@ export default function SignIn(props) {
             <TextField
               value={email}
               onChange={handleChange}
-              variant="outlined"
               margin="normal"
               required
               fullWidth
@@ -95,7 +95,6 @@ export default function SignIn(props) {
             <TextField
               value={password}
               onChange={handleChange}
-              variant="outlined"
               margin="normal"
               required
               fullWidth
@@ -104,10 +103,6 @@ export default function SignIn(props) {
               type="password"
               id="password"
               autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
             />
             <Button
               type="submit"

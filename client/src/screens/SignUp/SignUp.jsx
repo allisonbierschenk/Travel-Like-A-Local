@@ -14,19 +14,6 @@ import { useState } from "react";
 import Footer from "../../components/Footer";
 import Logo from "../../components/Logo";
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="/">
-        Travel Like A Local
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -36,15 +23,15 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.warning.main,
+    backgroundColor: theme.palette.success.dark,
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "100%",
     marginTop: theme.spacing(3),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: theme.palette.warning.main,
+    backgroundColor: theme.palette.success.dark,
   },
 }));
 
@@ -90,7 +77,6 @@ export default function SignUp(props) {
                 <TextField
                   value={username}
                   onChange={handleChange}
-                  variant="outlined"
                   name="username"
                   required
                   fullWidth
@@ -102,7 +88,6 @@ export default function SignUp(props) {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  variant="outlined"
                   required
                   fullWidth
                   id="email"
@@ -115,7 +100,6 @@ export default function SignUp(props) {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  variant="outlined"
                   required
                   fullWidth
                   name="password"
