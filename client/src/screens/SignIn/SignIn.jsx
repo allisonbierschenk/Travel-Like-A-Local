@@ -14,8 +14,15 @@ import { useState } from "react";
 import Footer from "../../components/Footer";
 import Logo from "../../components/Logo";
 import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
 
 const theme = createMuiTheme({
+  palette: {
+    success: {
+      main: "#103C17",
+    },
+  },
+
   palette: {
     primary: {
       main: "#103C17",
@@ -32,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.success.main,
   },
   form: {
     width: "100%",
@@ -40,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.success.main,
   },
 }));
 
@@ -64,68 +71,78 @@ export default function SignIn(props) {
   return (
     <div>
       <Logo />
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            SignIn
-          </Typography>
-          <form
-            className={classes.form}
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleLogin(formData);
-            }}
-          >
-            <TextField
-              value={email}
-              onChange={handleChange}
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              name="email"
-              label="Email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              value={password}
-              onChange={handleChange}
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
+      <ThemeProvider theme={theme}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <div className={classes.paper}>
+            <Avatar
+              className={classes.avatar}
+              theme={theme}
+              color="main"
+              backgroundColor="main"
             >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item>
-                <Link href="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              SignIn
+            </Typography>
+            <form
+              className={classes.form}
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleLogin(formData);
+              }}
+            >
+              <TextField
+                value={email}
+                onChange={handleChange}
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                name="email"
+                label="Email"
+                autoComplete="email"
+                autoFocus
+                color="main"
+              />
+              <TextField
+                value={password}
+                onChange={handleChange}
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                color="main"
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                backgroundColor="main"
+                className={classes.submit}
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item>
+                  <Link href="/signup" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
               </Grid>
-            </Grid>
-          </form>
-        </div>
-        <Box mt={8}>
-          <Footer />
-        </Box>
-      </Container>
+            </form>
+          </div>
+          <Box mt={8}>
+            <Footer />
+          </Box>
+        </Container>
+      </ThemeProvider>
     </div>
   );
 }
