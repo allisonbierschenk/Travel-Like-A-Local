@@ -8,16 +8,19 @@
   height: 300px;
   width: 300px;
 
-  margin-top: -70vh;
+  margin-top: -60vh;
   padding: 30px;
 }
 
 .modal-buttons {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 100px;
 }
 
-.modal-button {
+.modal-button,
+.modal-button-notnow {
   font-family: "Poiret One", cursive;
   font-weight: bold;
   font-size: 20px;
@@ -28,6 +31,11 @@
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
+  height: 30px;
+}
+.modal-button-notnow {
+  height: 24px;
+  font-size: 12px;
 }
 
 .modal-button:hover {
@@ -38,9 +46,4 @@
 .modal-button:visited {
   color: white;
   outline: none;
-}
-
-.x {
-  margin-left: 28vw;
-  margin-top: -14vh;
 }
