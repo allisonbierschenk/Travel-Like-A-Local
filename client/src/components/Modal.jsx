@@ -19,6 +19,8 @@ export default function Modal(props) {
               REGISTER
             </Link>
           </button>
+        </div>
+        <div>
           <button
             onClick={(e) => handleOpen(false)}
             className="modal-button-notnow"

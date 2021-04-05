@@ -15,8 +15,8 @@
 .modal-buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  height: 100px;
+  justify-content: space-evenly;
+  height: 50px;
 }
 
 .modal-button,
