@@ -8,13 +8,13 @@ export default function Modal(props) {
     <div className="modal-container" onClick={(e) => handleOpen(false)}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         <p>please login</p>
-        <div>
-          <button className="button">
+        <div className="modal-buttons">
+          <button className="modal-button">
             <Link className="button-text" to="/signin">
               SIGNIN
             </Link>
           </button>
-          <button className="button">
+          <button className="modal-button">
             <Link className="button-text" to="/signup">
               SIGNUP
             </Link>
