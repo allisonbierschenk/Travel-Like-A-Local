@@ -18,9 +18,14 @@
 }
 
 .each-comment {
+  display: flex;
   text-align: left;
-  border-bottom: 1px solid lightgray;
   font-size: 16px;
+  height: 24px;
+}
+
+.comment-content {
+  text-indent: 10px;
 }
 p,
 form,
@@ -28,4 +33,12 @@ label,
 textarea,
 button {
   outline: none;
+}
+.username {
+  font-weight: bold;
+}
+
+.all-comments {
+  border-top: 1px solid lightgray;
+  margin-top: 40px;
 }
