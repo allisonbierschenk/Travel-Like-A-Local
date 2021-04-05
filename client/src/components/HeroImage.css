@@ -12,3 +12,52 @@
 
   position: absolute;
 }
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin-top: -4vh;
+  background-color: rgba(255, 255, 255, 0.55);
+  padding: 1vh;
+}
+
+.header {
+  font-size: 30px;
+  font-weight: bold;
+}
+.sub-header {
+  padding-top: 1vh;
+  font-size: 24px;
+  text-align: left;
+}
+.paragraph {
+  padding-top: 1vh;
+  font-size: 20px;
+  text-align: left;
+}
+.paragraph-2 {
+  padding-top: 1vh;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.border {
+  margin-top: -31vh;
+  border-bottom: 10px solid rgba(255, 255, 255, 0.447);
+  border-left: 10px solid rgba(255, 255, 255, 0.447);
+  border-right: 10px solid rgba(255, 255, 255, 0.447);
+  width: 35vw;
+  height: 35vh;
+}
+
+@media screen and (max-width: 1050px) {
+  .border {
+    margin-top: -35vh;
+    border-bottom: 10px solid rgba(255, 255, 255, 0.447);
+    border-left: 10px solid rgba(255, 255, 255, 0.447);
+    border-right: 10px solid rgba(255, 255, 255, 0.447);
+    width: 35vw;
+    height: 37vh;
+  }
+}
