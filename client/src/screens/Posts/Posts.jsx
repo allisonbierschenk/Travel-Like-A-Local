@@ -25,12 +25,15 @@ export default function Posts(props) {
     <div>
       <div className="homepage-body" className="homepage-body-overlay">
         <div className="intro">
-          <div className="header">Welcome!</div>
+          <div className="header">Welcome！</div>
           <div className="sub-header">I'm Allison</div>
-          <div className="paragraph"></div>
-          Traveling has been a part of my life for 15 years. Explore the site to
-          find little gems travelors have discovered on their journeys.
+          <div className="paragraph">
+            Traveling has been a part of my life for 15 years. Explore the site
+            to find little gems travelors have discovered on their journeys.
+          </div>
+          <div className="paragraph-2">⋯ Happy Travels ⋯</div>
         </div>
+        <div className="border"></div>
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <div className="posts-list">
           {queriedPosts.length ? postJSX : allPostJSX}
