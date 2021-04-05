@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "react-float-input": "^1.0.1",
+    "react-hook-form": "^7.0.0"
+  }
+}

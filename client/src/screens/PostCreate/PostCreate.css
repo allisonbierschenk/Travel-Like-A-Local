@@ -1,0 +1,58 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+  justify-content: space-around;
+}
+
+textarea {
+  font-family: "Poiret One", cursive;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.float-label {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.float-label input {
+  width: 50vw;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid lightgray;
+  background: #fff;
+  font-family: "Poiret One", cursive;
+  font-size: 24px;
+  height: 5vh;
+  caret-color: lightslategray;
+  color: black;
+}
+
+.float-label textarea {
+  font-family: "Poiret One", cursive;
+  font-size: 24px;
+  outline: 0;
+  border: 1px solid lightgray;
+  background: #fff;
+  font-family: "Poiret One", cursive;
+  width: 50vw;
+  height: 60vh;
+  color: black;
+}
+
+.float-label label {
+  font-size: 14px;
+  font-family: "Poiret One", cursive;
+  padding: 0 12px;
+  pointer-events: none;
+  position: absolute;
+  transform: translate(0, 14px) scale(1);
+}
+
+.float-label .Active {
+  transform: translate(10%, -1vh);
+  background-color: white;
+}

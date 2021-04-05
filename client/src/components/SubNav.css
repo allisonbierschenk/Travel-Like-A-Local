@@ -1,0 +1,9 @@
+.sub-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.link:hover {
+  color: rgb(13, 154, 154);
+  font-weight: bold;
+}
