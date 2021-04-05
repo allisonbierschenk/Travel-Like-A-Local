@@ -26,12 +26,12 @@ export default function Nav(props) {
           <div className="right-side">
             <button className="button">
               <Link className="button-text" to="/signin">
-                SIGNIN
+                SIGN IN
               </Link>
             </button>
             <button className="button">
               <Link className="button-text" to="/signup">
-                SIGNUP
+                REGISTER
               </Link>
             </button>
           </div>

@@ -3,15 +3,18 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-color: blue;
+  background-color: white;
+  border: 1px solid rgb(0, 0, 0);
   height: 300px;
   width: 300px;
+
+  margin-top: -70vh;
+  padding: 30px;
 }
 
 .modal-buttons {
   display: flex;
-  justify-content: center;
-  align-items: space-around;
+  justify-content: space-evenly;
 }
 
 .modal-button {
