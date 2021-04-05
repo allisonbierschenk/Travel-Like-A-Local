@@ -37,6 +37,13 @@ export default function Comments(props) {
   return (
     <div className="comments">
       <form onSubmit={handleClick} className="comments">
+        {open ? (
+          <Modal
+            currentUser={currentUser}
+            handleOpen={handleOpen}
+            open={open}
+          />
+        ) : null}
         <label className="label">What are your thoughts?</label>
         <textarea
           className="text-area"
@@ -46,13 +53,6 @@ export default function Comments(props) {
           onChange={handleChange}
         ></textarea>
         <button className="submit-button">Submit</button>
-        {open ? (
-          <Modal
-            currentUser={currentUser}
-            handleOpen={handleOpen}
-            open={open}
-          />
-        ) : null}
       </form>
     </div>
   );
