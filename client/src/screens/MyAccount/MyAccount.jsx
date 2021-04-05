@@ -1,5 +1,6 @@
 import PostPreview from "../../components/PostPreview";
 import SubNav from "../../components/SubNav";
+import "./MyAccount.css";
 
 export default function MyAccount(props) {
   const { allPosts, currentUser } = props;

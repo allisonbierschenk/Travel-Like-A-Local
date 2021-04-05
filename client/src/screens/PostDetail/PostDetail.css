@@ -1,6 +1,7 @@
 .post-detail {
   margin-left: 20vw;
   margin-right: 20vw;
+  min-height: 100vh;
 }
 
 .content {
