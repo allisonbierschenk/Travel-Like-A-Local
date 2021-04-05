@@ -3,8 +3,7 @@
   flex-direction: column;
   width: 45vw;
   margin-bottom: 4vh;
-  /* height: auto; */
-  background-color: rgba(16, 60, 23, 0.863);
+  background-color: rgba(16, 60, 23, 0.721);
   color: white;
 }
 
@@ -24,7 +23,7 @@
   font-weight: bold;
   font-size: 20px;
   border: none;
-  background-color: #c65652;
+  background-color: #c6565296;
   color: white;
   padding: 5px;
   padding-left: 10px;
