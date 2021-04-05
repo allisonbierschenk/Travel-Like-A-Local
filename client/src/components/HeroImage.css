@@ -1,6 +1,7 @@
 .hero {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background: url("https://i.imgur.com/OS39pqq.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -10,19 +11,14 @@
   min-width: 1024px;
   width: 100%;
   height: 50%;
-
   position: absolute;
 }
 
-.welcome {
+.intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.intro {
-  display: flex;
-  flex-direction: column;
   width: 30vw;
   margin-top: -4vh;
   background-color: rgba(255, 255, 255, 0.55);
@@ -54,8 +50,8 @@
   border-bottom: 10px solid rgba(255, 255, 255, 0.447);
   border-left: 10px solid rgba(255, 255, 255, 0.447);
   border-right: 10px solid rgba(255, 255, 255, 0.447);
-  width: 35vw;
-  height: 35vh;
+  width: 32vw;
+  height: 37vh;
 }
 
 @media screen and (max-width: 1050px) {
@@ -64,7 +60,7 @@
     border-bottom: 10px solid rgba(255, 255, 255, 0.447);
     border-left: 10px solid rgba(255, 255, 255, 0.447);
     border-right: 10px solid rgba(255, 255, 255, 0.447);
-    width: 35vw;
+    width: 32vw;
     height: 37vh;
   }
 }
