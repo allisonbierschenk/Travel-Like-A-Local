@@ -26,7 +26,7 @@
 }
 
 .comment-content {
-  text-indent: 10px;
+  padding-left: 10px;
 }
 p,
 form,

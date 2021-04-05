@@ -35,7 +35,7 @@ function App() {
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData);
     setCurrentUser(userData);
-    history.push("/myaccount");
+    history.goBack();
   };
 
   const handleRegister = async (formData) => {
@@ -48,6 +48,7 @@ function App() {
     setCurrentUser(null);
     localStorage.removeItem("authToken");
     removeToken();
+    history.push("/");
   };
 
   return (
