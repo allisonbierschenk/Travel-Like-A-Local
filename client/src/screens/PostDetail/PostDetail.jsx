@@ -58,7 +58,11 @@ export default function PostDetail(props) {
                 );
               })}
           </div>
-          <Comments createComment={createComment} postId={post.id} />
+          <Comments
+            createComment={createComment}
+            postId={post.id}
+            currentUser={currentUser}
+          />
         </div>
       )}
     </div>
