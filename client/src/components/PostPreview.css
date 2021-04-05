@@ -46,4 +46,7 @@
     flex-wrap: wrap;
     width: 80vw;
   }
+  .continue-button {
+    width: 80vw;
+  }
 }
