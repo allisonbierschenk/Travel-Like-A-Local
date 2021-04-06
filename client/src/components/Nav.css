@@ -52,7 +52,7 @@
   color: white;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 610px) {
   .logo {
     font-family: "Tangerine", cursive;
     font-size: 1px;
