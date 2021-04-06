@@ -7,7 +7,7 @@ import "./PostDetail.css";
 
 export default function PostDetail(props) {
   const [post, setPost] = useState(null);
-  const { allPosts, removePost, currentUser, username } = props;
+  const { allPosts, removePost, currentUser } = props;
   const [comments, setComments] = useState([]);
   const { id } = useParams();
 

@@ -22,12 +22,14 @@
   display: flex;
   text-align: left;
   font-size: 16px;
-  height: 24px;
 }
 
 .comment-content {
+  display: flex;
+  flex-wrap: wrap;
   font-family: "Poiret One", cursive;
-  padding-left: 10px;
+  padding-left: 6px;
+  margin: 0px;
 }
 p,
 form,
@@ -35,6 +37,7 @@ label,
 textarea,
 button {
   outline: none;
+  margin: 0px;
 }
 .username {
   font-family: "Roboto", sans-serif;
@@ -43,4 +46,5 @@ button {
 .all-comments {
   border-top: 1px solid lightgray;
   margin-top: 40px;
+  padding-top: 10px;
 }
