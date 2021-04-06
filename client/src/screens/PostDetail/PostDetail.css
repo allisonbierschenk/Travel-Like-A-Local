@@ -26,6 +26,7 @@
 }
 
 .comment-content {
+  font-family: "Poiret One", cursive;
   padding-left: 10px;
 }
 p,
@@ -36,7 +37,7 @@ button {
   outline: none;
 }
 .username {
-  font-weight: bold;
+  font-family: "Roboto", sans-serif;
 }
 
 .all-comments {
