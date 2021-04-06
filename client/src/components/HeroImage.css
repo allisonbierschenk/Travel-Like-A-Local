@@ -8,7 +8,8 @@
   -o-background-size: cover;
   background-size: cover;
   min-height: 50%;
-  min-width: 100vh;
+  min-width: 1024px;
+  width: 100%;
   height: 50%;
   position: absolute;
 }
@@ -64,14 +65,25 @@
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .border {
-    margin-top: -40vh;
+    margin-top: -30vh;
     border-bottom: 10px solid rgba(255, 255, 255, 0.447);
     border-left: 10px solid rgba(255, 255, 255, 0.447);
     border-right: 10px solid rgba(255, 255, 255, 0.447);
     width: 35vw;
-    height: 42vh;
+    height: 37vh;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .border {
+    margin-top: -32vh;
+    border-bottom: 10px solid rgba(255, 255, 255, 0.447);
+    border-left: 10px solid rgba(255, 255, 255, 0.447);
+    border-right: 10px solid rgba(255, 255, 255, 0.447);
+    width: 35vw;
+    height: 32vh;
   }
 }
 
@@ -94,7 +106,7 @@
 
 @media screen and (max-width: 680px) {
   .hero {
-    min-width: 100vh;
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,6 +114,26 @@
   .intro {
     display: flex;
     flex-direction: column;
+    width: 50vw;
+    margin-top: -3vh;
+    background-color: rgba(255, 255, 255, 0.55);
+    padding: 1vh;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .hero {
+    min-width: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
     width: 50vw;
     margin-top: -3vh;
     background-color: rgba(255, 255, 255, 0.55);
