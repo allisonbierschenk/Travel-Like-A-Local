@@ -4,7 +4,9 @@
   flex-wrap: wrap;
   width: 45vw;
   height: 20vh;
-  margin-bottom: 4vh;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
   background-color: rgba(16, 60, 23, 0.721);
   color: white;
 }
