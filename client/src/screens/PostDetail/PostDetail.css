@@ -37,10 +37,10 @@ label,
 textarea,
 button {
   outline: none;
-  margin: 0px;
 }
 .username {
   font-family: "Roboto", sans-serif;
+  margin: 0px;
 }
 
 .all-comments {
