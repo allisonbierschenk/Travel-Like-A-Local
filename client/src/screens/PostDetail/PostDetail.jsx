@@ -10,6 +10,7 @@ export default function PostDetail(props) {
   const { allPosts, removePost, currentUser } = props;
   const [comments, setComments] = useState([]);
   const { id } = useParams();
+  const { username } = props;
 
   const getComments = async () => {
     const comments = await getAllComments(id);
@@ -35,6 +36,8 @@ export default function PostDetail(props) {
           <h3 className="post-detail-title">{post.title}</h3>
           <p className="post-detail-destination">{post.destination}</p>
           <p className="content">{post.content}</p>
+          {/* <p className="username"> {user} </p> */}
+
           {currentUser?.id === post.user_id && (
             <>
               <Link to={`/posts/${post.id}/edit`}>

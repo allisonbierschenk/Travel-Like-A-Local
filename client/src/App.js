@@ -3,6 +3,7 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import "./App.css";
 import MainContainer from "./containers/maincontainer/MainContainer";
 import Layout from "./layout/Layout";
+import PostDetail from "./screens/PostDetail/PostDetail";
 import SignIn from "./screens/SignIn/SignIn";
 import SignUp from "./screens/SignUp/SignUp";
 
@@ -43,6 +44,8 @@ function App() {
     removeToken();
     history.push("/");
   };
+
+  <PostDetail handleRegister={handleRegister} />;
 
   return (
     <div className="app">
