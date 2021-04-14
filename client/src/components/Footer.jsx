@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
-import "./Footer.css";
+import "../Assets/Footer.css";
 
 export default function Footer() {
   return (

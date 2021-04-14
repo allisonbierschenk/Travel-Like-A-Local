@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Comments.css";
+import "../Assets/Comments.css";
 import Modal from "./Modal";
 
 export default function Comments(props) {
@@ -8,7 +8,7 @@ export default function Comments(props) {
     content: "",
   });
   const { content } = commentData;
-  const { createComment, postId, currentUser, user } = props;
+  const { createComment, postId, currentUser } = props;
 
   const handleClick = (e) => {
     e.preventDefault();

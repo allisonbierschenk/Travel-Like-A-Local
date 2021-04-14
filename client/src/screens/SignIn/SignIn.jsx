@@ -56,6 +56,8 @@ export default function SignIn(props) {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+    isError: false,
+    errorMsg: "",
   });
   const { email, password } = formData;
   const { handleLogin } = props;
@@ -68,6 +70,24 @@ export default function SignIn(props) {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (handleLogin(formData)) {
+      console.log("yay");
+    }
+    // else {
+    //   renderError();
+    // }
+  };
+
+  // const renderError = () => {
+  //   if (handleLogin(!formData)) {
+  //     return <div>Error</div>;
+  //   } else {
+  //     return <div>Great!</div>;
+  //   }
+  // };
+
   return (
     <div>
       <Logo />
@@ -75,24 +95,13 @@ export default function SignIn(props) {
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
-            <Avatar
-              className={classes.avatar}
-              theme={theme}
-              color="main"
-              backgroundColor="main"
-            >
+            <Avatar className={classes.avatar} theme={theme} color="main">
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
               SignIn
             </Typography>
-            <form
-              className={classes.form}
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleLogin(formData);
-              }}
-            >
+            <form className={classes.form} onSubmit={handleSubmit}>
               <TextField
                 value={email}
                 onChange={handleChange}
@@ -104,7 +113,6 @@ export default function SignIn(props) {
                 label="Email"
                 autoComplete="email"
                 autoFocus
-                color="main"
               />
               <TextField
                 value={password}
@@ -117,18 +125,17 @@ export default function SignIn(props) {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                color="main"
               />
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 color="primary"
-                backgroundColor="main"
                 className={classes.submit}
               >
                 Sign In
               </Button>
+              {/* {renderError} */}
               <Grid container>
                 <Grid item>
                   <Link href="/signup" variant="body2">

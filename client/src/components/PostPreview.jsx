@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./PostPreview.css";
+import "../Assets/PostPreview.css";
 
 export default function PostPreview(props) {
   const { post } = props;

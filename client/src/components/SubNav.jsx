@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./SubNav.css";
+import "../Assets/SubNav.css";
 
 export default function SubNav(props) {
   return (

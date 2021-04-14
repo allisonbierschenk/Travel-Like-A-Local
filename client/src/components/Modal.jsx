@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Modal.css";
+import "../Assets/Modal.css";
 
 export default function Modal(props) {
   const { open, handleOpen } = props;
