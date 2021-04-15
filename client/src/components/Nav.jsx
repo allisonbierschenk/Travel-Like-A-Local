@@ -8,10 +8,10 @@ export default function Nav(props) {
     <header>
       <div className="nav">
         <Link to="/">
-          <a className="left-side">
-            <img src="https://i.imgur.com/JSkNgG8.png?1" />
+          <div className="left-side">
+            <img src="https://i.imgur.com/JSkNgG8.png?1" alt="logo" />
             <h1 className="logo">Travel Like A Local</h1>
-          </a>
+          </div>
         </Link>
         {currentUser ? (
           <div className="right-side">

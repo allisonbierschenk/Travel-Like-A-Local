@@ -10,7 +10,6 @@ export default function PostDetail(props) {
   const { allPosts, removePost, currentUser } = props;
   const [comments, setComments] = useState([]);
   const { id } = useParams();
-  const { username } = props;
 
   const getComments = async () => {
     const comments = await getAllComments(id);

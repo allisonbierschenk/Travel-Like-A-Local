@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../Assets/Modal.css";
 
 export default function Modal(props) {
-  const { open, handleOpen } = props;
+  const { handleOpen } = props;
   return (
     <div className="modal-container">
       <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -22,10 +22,10 @@ export default function Modal(props) {
         </div>
         <div>
           <button
-            onClick={(e) => handleOpen(false)}
             className="modal-button-notnow"
+            onClick={(e) => handleOpen(false)}
           >
-            NOT NOW
+            <Link className="button-text">NOT NOW</Link>
           </button>
         </div>
       </div>
