@@ -51,7 +51,7 @@ export default function PostDetail(props) {
             {comments &&
               comments.map((comment) => {
                 return (
-                  <div className="each-comment">
+                  <div key={comment.id} className="each-comment">
                     <p className="username"> {comment.user?.username} </p>
                     <p className="comment-content"> {comment.content}</p>
                   </div>

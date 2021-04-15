@@ -16,7 +16,7 @@ export default function MyAccount(props) {
             })
             .map((post) => (
               <>
-                <PostPreview post={post} />
+                <PostPreview key={post.id} post={post} />
               </>
             ))}
       </div>
