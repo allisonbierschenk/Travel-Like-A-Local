@@ -15,6 +15,7 @@ import Footer from "../../components/Footer";
 import Logo from "../../components/Logo";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import { loginUser, verifyUser } from "../../services/auth";
 
 const theme = createMuiTheme({
   palette: {
@@ -56,7 +57,7 @@ export default function SignIn(props) {
     isError: false,
     errorMsg: "",
   });
-  const { email, password } = formData;
+  const { email, password, isError, errorMsg } = formData;
   const { handleLogin } = props;
 
   const handleChange = (e) => {
@@ -69,21 +70,43 @@ export default function SignIn(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (handleLogin(formData)) {
-      console.log("yay");
+    handleLogin(formData);
+    const { currentUser } = props;
+    if (formData === currentUser) {
+      console.log(currentUser);
+    } else {
+      setFormData({
+        isError: true,
+        errorMsg: "Your Username or Password is incorrect. Try Again",
+        email: "",
+        password: "",
+      });
     }
-    // else {
-    //   renderError();
-    // }
+
+    // loginUser(formData).then((user) => {
+    //   setCurrentUser(user).catch((error) => {
+    //     setFormData({
+    //       isError: true,
+    //       errorMsg:
+    //         "Invalid Credentials: Your Username or Password is incorrect. Try Again",
+    //       email: "",
+    //       password: "",
+    //     });
+    //   });
+    // });
   };
 
-  // const renderError = () => {
-  //   if (handleLogin(!formData)) {
-  //     return <div>Error</div>;
-  //   } else {
-  //     return <div>Great!</div>;
-  //   }
-  // };
+  const renderError = () => {
+    if (formData.isError) {
+      return (
+        <div className="invalid-signin">
+          <p>{formData.errorMsg}</p>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  };
 
   return (
     <div>
@@ -132,7 +155,7 @@ export default function SignIn(props) {
               >
                 Sign In
               </Button>
-              {/* {renderError} */}
+              {renderError()}
               <Grid container>
                 <Grid item>
                   <Link href="/signup" variant="body2">

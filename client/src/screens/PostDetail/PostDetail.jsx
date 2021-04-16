@@ -35,8 +35,6 @@ export default function PostDetail(props) {
           <h3 className="post-detail-title">{post.title}</h3>
           <p className="post-detail-destination">{post.destination}</p>
           <p className="content">{post.content}</p>
-          {/* <p className="username"> {user} </p> */}
-
           {currentUser?.id === post.user_id && (
             <>
               <Link to={`/posts/${post.id}/edit`}>

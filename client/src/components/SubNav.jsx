@@ -6,13 +6,13 @@ export default function SubNav(props) {
   return (
     <div className="sub-nav">
       <Link to="/myaccount">
-        <p className="link">My Posts</p>
+        <div className="link">My Posts</div>
       </Link>
       <Link to="/posts/new">
-        <p className="link">New Post</p>
+        <div className="link">New Post</div>
       </Link>
       <Link to="/myfavorites">
-        <p className="link">My Favorites</p>
+        <div className="link">My Favorites</div>
       </Link>
     </div>
   );
