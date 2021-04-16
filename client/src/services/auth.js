@@ -1,3 +1,4 @@
+import { responsiveFontSizes } from "@material-ui/core";
 import api from "./api-config";
 
 export const loginUser = async (loginData) => {
@@ -30,6 +31,15 @@ export const verifyUser = async () => {
     return resp.data;
   }
   return null;
+};
+
+export const allUsers = async () => {
+  try {
+    const resp = await api.get("/users/");
+    return resp.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const removeToken = () => {

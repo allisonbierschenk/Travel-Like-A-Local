@@ -15,6 +15,9 @@ import Footer from "../../components/Footer";
 import Logo from "../../components/Logo";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import { allUsers } from "../../services/auth";
+import { useEffect } from "react";
+import Alert from "@material-ui/lab/Alert";
 
 const theme = createMuiTheme({
   palette: {
@@ -50,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp(props) {
   const classes = useStyles();
+  const [users, setUsers] = useState([]);
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -60,6 +64,14 @@ export default function SignUp(props) {
   });
   const { username, email, password, passwordConfirmation } = formData;
   const { handleRegister } = props;
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const all = await allUsers();
+      setUsers(all);
+    };
+    fetchUsers();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -94,6 +106,25 @@ export default function SignUp(props) {
       );
     } else if (formData.password !== formData.passwordConfirmation) {
       return <p className="invalid-on-signup">Passwords Do Not Match</p>;
+    } else if (users.some((user) => user.username === formData.username)) {
+      return <p className="invalid-on-signup">Username Already Taken</p>;
+    } else if (users.some((user) => user.email === formData.email)) {
+      return (
+        <div className="email-taken">
+          <p className="invalid-on-signup">
+            Email Already Associated With Account.
+          </p>
+        </div>
+      );
+    } else if (formData.password.length < 6) {
+      return (
+        <div>
+          <br />
+          <Alert variant="outlined" severity="warning">
+            Password must be at least 6 characters
+          </Alert>
+        </div>
+      );
     } else {
       return null;
     }
@@ -176,6 +207,7 @@ export default function SignUp(props) {
               >
                 Sign Up
               </Button>
+
               <Grid container justify="flex-end">
                 <Grid item>
                   <Link href="/signin" variant="body2">

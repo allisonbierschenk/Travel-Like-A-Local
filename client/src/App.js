@@ -43,7 +43,7 @@ function App() {
     try {
       const userData = await registerUser(formData);
       setCurrentUser(userData);
-      history.goBack();
+      history.push("/");
     } catch (error) {
       throw error;
     }

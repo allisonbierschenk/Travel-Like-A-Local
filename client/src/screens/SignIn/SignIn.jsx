@@ -71,8 +71,9 @@ export default function SignIn(props) {
     e.preventDefault();
     handleLogin(formData);
     const { currentUser } = props;
+    console.log(currentUser);
     if (formData === currentUser) {
-      console.log(currentUser);
+      return null;
     } else {
       setFormData({
         isError: true,
