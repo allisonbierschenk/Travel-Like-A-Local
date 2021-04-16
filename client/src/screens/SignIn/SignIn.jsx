@@ -15,7 +15,6 @@ import Footer from "../../components/Footer";
 import Logo from "../../components/Logo";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
-import { loginUser, verifyUser } from "../../services/auth";
 
 const theme = createMuiTheme({
   palette: {
@@ -57,7 +56,7 @@ export default function SignIn(props) {
     isError: false,
     errorMsg: "",
   });
-  const { email, password, isError, errorMsg } = formData;
+  const { email, password } = formData;
   const { handleLogin } = props;
 
   const handleChange = (e) => {
@@ -82,18 +81,6 @@ export default function SignIn(props) {
         password: "",
       });
     }
-
-    // loginUser(formData).then((user) => {
-    //   setCurrentUser(user).catch((error) => {
-    //     setFormData({
-    //       isError: true,
-    //       errorMsg:
-    //         "Invalid Credentials: Your Username or Password is incorrect. Try Again",
-    //       email: "",
-    //       password: "",
-    //     });
-    //   });
-    // });
   };
 
   const renderError = () => {

@@ -40,9 +40,13 @@ function App() {
   };
 
   const handleRegister = async (formData) => {
-    const userData = await registerUser(formData);
-    setCurrentUser(userData);
-    history.goBack();
+    try {
+      const userData = await registerUser(formData);
+      setCurrentUser(userData);
+      history.goBack();
+    } catch (error) {
+      throw error;
+    }
   };
 
   const handleLogout = () => {
@@ -59,7 +63,7 @@ function App() {
           <SignIn handleLogin={handleLogin} currentUser={currentUser} />
         </Route>
         <Route path="/signup">
-          <SignUp handleRegister={handleRegister} />
+          <SignUp handleRegister={handleRegister} currentUser={currentUser} />
         </Route>
         <Layout currentUser={currentUser} handleLogout={handleLogout}>
           <Route path="/">

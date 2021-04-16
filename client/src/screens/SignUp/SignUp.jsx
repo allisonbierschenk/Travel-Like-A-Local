@@ -54,8 +54,11 @@ export default function SignUp(props) {
     username: "",
     email: "",
     password: "",
+    passwordConfirmation: "",
+    isError: false,
+    errorMsg: "",
   });
-  const { username, email, password } = formData;
+  const { username, email, password, passwordConfirmation } = formData;
   const { handleRegister } = props;
 
   const handleChange = (e) => {
@@ -64,6 +67,36 @@ export default function SignUp(props) {
       ...prevState,
       [name]: value,
     }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleRegister(formData);
+    const { currentUser } = props;
+    if (formData) {
+      console.log(currentUser);
+    } else {
+      setFormData({
+        username: "",
+        email: "",
+        password: "",
+        passwordConfirmation: "",
+        isError: true,
+        errorMsg: "Sign up error",
+      });
+    }
+  };
+  const renderError = () => {
+    if (formData.isError) {
+      return (
+        <div className="invalid-signin">
+          <p>{formData.errorMsg}</p>
+        </div>
+      );
+    } else if (formData.password !== formData.passwordConfirmation) {
+      return <p className="invalid-on-signup">Passwords Do Not Match</p>;
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -79,13 +112,7 @@ export default function SignUp(props) {
             <Typography component="h1" variant="h5">
               SignUp
             </Typography>
-            <form
-              className={classes.form}
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleRegister(formData);
-              }}
-            >
+            <form className={classes.form} onSubmit={handleSubmit}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <TextField
@@ -125,7 +152,21 @@ export default function SignUp(props) {
                     onChange={handleChange}
                   />
                 </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="passwordConfirmation"
+                    label="Password Confirmation"
+                    type="password"
+                    id="password-confirmation"
+                    autoComplete="password-confirmation"
+                    value={passwordConfirmation}
+                    onChange={handleChange}
+                  />
+                </Grid>
               </Grid>
+              {renderError()}
               <Button
                 type="submit"
                 fullWidth
